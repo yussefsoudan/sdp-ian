@@ -24,9 +24,10 @@ time.sleep(0.5)
 # barcodes found thus far
 csv = open(args["output"], "w")
 found = set()
+scanning = True
 
 # loop over the frames from the video stream
-while True:
+while scanning:
 	# grab the frame from the threaded video stream and resize it to
 	# have a maximum width of 400 pixels
 	frame = vs.read()
@@ -58,6 +59,8 @@ while True:
 				barcodeData))
 			csv.flush()
 			found.add(barcodeData)
+		scanning = False
+		break
 	# show the output frame
 	cv2.imshow("Barcode Scanner", frame)
 	key = cv2.waitKey(1) & 0xFF
