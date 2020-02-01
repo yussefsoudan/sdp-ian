@@ -5,7 +5,7 @@ conn = mysql.connector.connect(user='gG4r5EDwsV', password='Whvk8bwI9p',
                               host='37.59.55.185',
                               database='gG4r5EDwsV')
 
-curser = conn.cursor()
+cursor = conn.cursor()
 # query string to be used for DB 
 query = "SELECT * FROM flights"
 
