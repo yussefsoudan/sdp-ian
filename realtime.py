@@ -55,16 +55,17 @@ while scanning:
 		# if the barcode text is currently not in our CSV file, write
 		# the timestamp + barcode to disk and update the set
 		if barcodeData not in found:
-			csv.write("{},{}\n".format(datetime.datetime.now(),
-				barcodeData))
+			#csv.write("{},{}\n".format(datetime.datetime.now(),
+				#barcodeData))
+			csv.write("{}\n".format(barcodeData))
 			csv.flush()
 			found.add(barcodeData)
-		scanning = False
-		break
+	
+	
 	# show the output frame
 	cv2.imshow("Barcode Scanner", frame)
 	key = cv2.waitKey(1) & 0xFF
-
+	scanning = False
 	# if the `q` key was pressed, break from the loop
 	if key == ord("q"):
 		break
