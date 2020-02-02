@@ -1,7 +1,7 @@
 import mysql.connector
 
 #initiate the connection to the DB
-def query_db(flight_id):
+def gate_no(flight_id):
     conn = mysql.connector.connect(user='group6', password='turtlebot',
                               host='localhost',
                               database='main_sdp_db')
@@ -17,7 +17,7 @@ def query_db(flight_id):
  
     while row is not None:
         output.append(row)
-	    row = cursor.fetchone()
+	row = cursor.fetchone()
     cursor.close()
     conn.close()
  
