@@ -1,4 +1,5 @@
 import mysql.connector
+
 #initiate the connection to the DB
 def gate_infor(gate_no):
     conn = mysql.connector.connect(user='group6', password='turtlebot',
@@ -16,7 +17,7 @@ def gate_infor(gate_no):
  
     while row is not None:
         output.append(row)
-	      row = cursor.fetchone()
+	row = cursor.fetchone()
     cursor.close()
     conn.close()
  
