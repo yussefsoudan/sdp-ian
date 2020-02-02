@@ -1,12 +1,17 @@
 # import the necessary packages
 from imutils.video import VideoStream
 #import CustomVS
+import csv 
 from pyzbar import pyzbar
+from get_gate_no import gate_no
+from get_gate_loc import gate_infor
+from read_csv import read_query_output
 import argparse
 import datetime
 import imutils
 import time
 import cv2
+import mysql.connector
 
 # construct the argument parser and parse the arguments
 ap = argparse.ArgumentParser()
@@ -15,7 +20,7 @@ ap.add_argument("-o", "--output", type=str, default="barcodes.csv",
 args = vars(ap.parse_args())
 
 # initialize the video stream and allow the camera sensor to warm up
-print("[INFO] starting video stream...")
+# print("[INFO] starting video stream...")
 vs = VideoStream(src=0,resolution = (1280,720)).start()
 # vs = VideoStream(usePiCamera=True,resolution=(960, 720),framerate=30).start()
 time.sleep(0.5)
@@ -25,7 +30,6 @@ time.sleep(0.5)
 csv = open(args["output"], "w")
 found = set()
 scanning = True
-
 # loop over the frames from the video stream
 while scanning:
 	# grab the frame from the threaded video stream and resize it to
@@ -57,23 +61,34 @@ while scanning:
 		if barcodeData not in found:
 			#csv.write("{},{}\n".format(datetime.datetime.now(),
 				#barcodeData))
-			csv.write("{}\n".format(barcodeData))
+                        csv.write("{}\n".format(barcodeData))
 			csv.flush()
 			found.add(barcodeData)
 		scanning = False
 		break
 	
-	
 	# show the output frame
 	cv2.imshow("Barcode Scanner", frame)
 	key = cv2.waitKey(1) & 0xFF
-	
+
 	# if the `q` key was pressed, break from the loop
 	if key == ord("q"):
 		break
+	
 
 # close the output CSV file do a bit of cleanup
-print("[INFO] cleaning up...")
+#print("[INFO] cleaning up...")
 csv.close()
 cv2.destroyAllWindows()
 vs.stop()
+while True: 
+	if scanning != True:
+		flight = read_query_output()
+		print ("Flight ID is {}".format(flight[0]))
+		break
+
+gate = gate_no(flight[0])
+print ("Gate number is {}".format(gate[0]))
+#loc = gate_loc(gate[1])
+#print ("Gate number is {}".format(gate[0]))
+#print (loc)
