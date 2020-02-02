@@ -8,7 +8,7 @@ def gate_no(flight_id):
 
     cursor = conn.cursor()
 # query string to be used for DB 
-    query = "SELECT * FROM flights WHERE flight_id = '{}'".format(flight_id) 
+    query = "SELECT gate_no FROM flights WHERE flight_id = '{}'".format(flight_id) 
     
     output = []
     cursor.execute(query)
