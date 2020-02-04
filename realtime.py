@@ -14,6 +14,7 @@ import cv2
 import mysql.connector
 
 # construct the argument parser and parse the arguments
+start = time.time()
 ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", type=str, default="barcodes.csv",
 	help="path to output CSV file containing barcodes")
@@ -89,6 +90,12 @@ while True:
 
 gate = gate_no(flight[0])
 print ("Gate number is {}".format(gate[0]))
-#loc = gate_loc(gate[1])
+#print ("time is: {}".format(time.time()-start))
+loc = gate_infor(gate[0])
+x = loc[0]
+y = loc[1]
+z = loc[2]
 #print ("Gate number is {}".format(gate[0]))
-#print (loc)
+print ("Location on x_coord is {}".format(x[0]))
+print ("Location on y_coord is {}".format(y[0]))
+print ("Location on z_coord is {}".format(z[0]))
