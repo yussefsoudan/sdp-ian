@@ -12,11 +12,11 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
 
-        self.gateSt = "Gate"
 
 
 
-        self.start.clicked.connect(lambda: self.setCurrentWidget(self.SCAN))
+
+        self.start.clicked.connect(lambda: self.StartScanning())
         self.next.clicked.connect(lambda: self.setCurrentWidget(self.SUCCESS))
         self.next2.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
         self.go_somewhere.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
@@ -32,6 +32,12 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         self.not_correct.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
 
+        self.yes_go.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+
+    def StartScanning(self):
+        self.setCurrentWidget(self.SCAN)
+
+
 
 
 
@@ -39,6 +45,7 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
     def ChooseLocation(self, location):
         self.setCurrentWidget(self.CONFIRM_DEST)
         self.location.setText(location)
+
 
 
 
