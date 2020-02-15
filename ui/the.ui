@@ -42,9 +42,9 @@
 background-color: rgb(243, 243, 243);</string>
   </property>
   <property name="currentIndex">
-   <number>0</number>
+   <number>2</number>
   </property>
-  <widget class="QWidget" name="FRONT">
+  <widget class="QWidget" name="START">
    <property name="windowOpacity">
     <double>1.000000000000000</double>
    </property>
