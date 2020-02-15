@@ -286,76 +286,41 @@ color: rgb(85, 87, 83);</string>
      <string>Where To?</string>
     </property>
    </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_2">
+   <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>70</x>
+      <x>110</x>
       <y>180</y>
-      <width>281</width>
-      <height>251</height>
+      <width>581</width>
+      <height>221</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QPushButton" name="shop">
-       <property name="styleSheet">
-        <string notr="true">font:20 34pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>Shop</string>
-       </property>
-      </widget>
-     </item>
-     <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
       <widget class="QPushButton" name="gate">
-       <property name="styleSheet">
-        <string notr="true">font:20 34pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
-       </property>
        <property name="text">
         <string>Gate</string>
        </property>
       </widget>
      </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="verticalLayoutWidget_3">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>180</y>
-      <width>281</width>
-      <height>251</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <property name="sizeConstraint">
-      <enum>QLayout::SetMinimumSize</enum>
-     </property>
-     <item>
+     <item row="2" column="0">
       <widget class="QPushButton" name="toilet">
-       <property name="styleSheet">
-        <string notr="true">font:20 34pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
-       </property>
        <property name="text">
         <string>Toilets</string>
        </property>
       </widget>
      </item>
-     <item>
+     <item row="1" column="0">
       <widget class="QPushButton" name="food">
-       <property name="styleSheet">
-        <string notr="true">font:20 34pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
-       </property>
        <property name="text">
         <string>Food</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="shop">
+       <property name="text">
+        <string>Shop</string>
        </property>
       </widget>
      </item>
