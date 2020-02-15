@@ -42,7 +42,7 @@
 background-color: rgb(98, 150, 187);</string>
   </property>
   <property name="currentIndex">
-   <number>0</number>
+   <number>1</number>
   </property>
   <widget class="QWidget" name="FRONT">
    <property name="windowOpacity">
@@ -80,8 +80,8 @@ background-color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
+      <x>160</x>
+      <y>30</y>
       <width>501</width>
       <height>371</height>
      </rect>
@@ -93,7 +93,8 @@ background-color: rgb(255, 255, 255);</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 40pt &quot;montserrat&quot;;</string>
+     <string notr="true">font: 40pt &quot;montserrat&quot;;
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="lineWidth">
      <number>1</number>
@@ -117,8 +118,8 @@ background-color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="next">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>190</y>
+      <x>700</x>
+      <y>440</y>
       <width>84</width>
       <height>28</height>
      </rect>
