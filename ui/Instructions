@@ -1,0 +1,25 @@
+Installing qt:
+1. download qt from internet
+	https://www.qt.io/offline-installers
+2. make .run file executable: chmod +x ./<filename>.run
+3. ./<filename>.run
+4. install both Qt 5.14.1 and Developer and Designer Tools
+
+Installing pyqt:
+1. make new python environment: python3 -m venv venv
+2. activate environment
+3. pip install PyQt5==5.9.2
+
+Finding qt designer:
+Navigate to ./Qt5.14.1/5.14.1/gcc_64/bin/designer
+
+To activate environment:
+source venv/bin/activate
+(to deactivate) deactivate
+
+To run .ui file as .py:
+run main.py
+file made from here: https://www.learnpyqt.com/examples/simple-sales-tax-calculator/
+
+#To change created .ui to executable .py:
+#run main.py
