@@ -1,60 +1,108 @@
-import sys
-from PyQt5 import QtCore, QtGui, QtWidgets, uic
+import sys, time
+from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic
 
+class Customer:
+
+    name = "Joe Blogs"
+    flight = "AA100"
+    gate = "7"
+    depart_time = "15:00"
 
 qtcreator_file  = "the.ui" # Enter file here.
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtcreator_file)
 
 
 class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
+
+    cust = Customer()
+
     def __init__(self):
         QtWidgets.QStackedWidget.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-
         self.setCurrentWidget(self.START)
 
-
-        self.start.clicked.connect(lambda: self.StartScanning())
+        self.start.clicked.connect(lambda: self.scan())
 
         # for testing
         self.next_scan.clicked.connect(lambda: self.setCurrentWidget(self.SUCCESS))
         self.next_success.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        # end
 
         self.go_somewhere.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
         self.back_to_info.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
 
-        self.gate.clicked.connect(lambda: self.ChooseDestination("Gate"))
-        self.toilet.clicked.connect(lambda: self.ChooseDestination("Toilets"))
+        self.gate.clicked.connect(lambda: self.chooseDestination("Gate"))
+
+        self.toilet.clicked.connect(lambda: self.chooseDestination("Toilets"))
+
         self.food.clicked.connect(lambda: self.setCurrentWidget(self.FOOD))
+        # self.back_to_where_food.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+
         self.shop.clicked.connect(lambda: self.setCurrentWidget(self.SHOPS))
-        self.mcd_food.clicked.connect(lambda: self.ChooseDestination("McDonalds"))
-        self.bburr_food.clicked.connect(lambda: self.ChooseDestination("Bar Burrito"))
-        self.whs_shop.clicked.connect(lambda: self.ChooseDestination("WHSmith"))
-        self.next_shop.clicked.connect(lambda: self.ChooseDestination("Next"))
+        # self.back_to_where_shops.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+
+        self.bburr_food.clicked.connect(lambda: self.chooseDestination("Bar Burrito"))
+        self.bking_food.clicked.connect(lambda: self.chooseDestination("Burger King"))
+        self.kk_food.clicked.connect(lambda: self.chooseDestination("Krispy Kreme"))
+        self.yo_food.clicked.connect(lambda: self.chooseDestination("Yo-Sushi"))
+        self.caffenero_food.clicked.connect(lambda: self.chooseDestination("Caffe Nero"))
+        self.eat_food.clicked.connect(lambda: self.chooseDestination("Eat."))
+        self.pret_food.clicked.connect(lambda: self.chooseDestination("Pret A Manger"))
+        self.brewdog_food.clicked.connect(lambda: self.chooseDestination("Brewdog"))
+
+        self.whs_shop.clicked.connect(lambda: self.chooseDestination("WHSmith"))
+        self.next_shop.clicked.connect(lambda: self.chooseDestination("Next"))
+        self.dutyfree_shop.clicked.connect(lambda: self.chooseDestination("World Duty Free"))
+        self.superdrug_shop.clicked.connect(lambda: self.chooseDestination("Superdrug"))
+        self.mns_shop.clicked.connect(lambda: self.chooseDestination("M&S"))
+        self.fatface_shop.clicked.connect(lambda: self.chooseDestination("Fatface"))
+        self.accessorize_shop.clicked.connect(lambda: self.chooseDestination("Accessorize"))
+        self.hugoboss_shop.clicked.connect(lambda: self.chooseDestination("Hugo Boss"))
 
         self.not_correct.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
         
 
         self.cancel_navigation.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
         self.go_somewhere_else.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+    
 
 
-    def StartScanning(self):
+
+    def scan(self):
+
         self.setCurrentWidget(self.SCAN)
 
+        # scan here
+
+        self.name_label.setText("Name: " + self.cust.name)
+        self.flight_label.setText("Flight: " + self.cust.flight)
+        self.gate_label.setText("Gate: " + self.cust.gate)
+        self.depart_time_label.setText("Departure time: " + self.cust.depart_time)
+        
+        QtTest.QTest.qWait(2000)
+
+        if self.currentWidget() == self.SCAN: self.setCurrentWidget(self.SUCCESS)
+
+        QtTest.QTest.qWait(2000)
+
+        if self.currentWidget() == self.SUCCESS: self.setCurrentWidget(self.INFO)
 
 
-    def ChooseDestination(self, location):
+
+    def chooseDestination(self, location):
+
         self.setCurrentWidget(self.CONFIRM_DEST)
         self.destination_label.setText(location + "?")
-        self.yes_go.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
         self.navigating_to_label2.setText(location)
+        self.yes_go.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
 
+        # navigate here
 
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = MyWindow()
     window.show()
-    sys.exit(app.exec_())
+    app.exec_()
+    sys.exit()
