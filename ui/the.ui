@@ -396,7 +396,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>backblue.png</normaloff>backblue.png</iconset>
+      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -580,7 +580,7 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>backblue.png</normaloff>backblue.png</iconset>
+      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -670,7 +670,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>backblue.png</normaloff>backblue.png</iconset>
+      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -722,7 +722,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../Downloads/output-onlinepngtools.png</normaloff>../../../Downloads/output-onlinepngtools.png</iconset>
+      <normaloff>icons/output-onlinepngtools.png</normaloff>icons/output-onlinepngtools.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -748,7 +748,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../Downloads/output-onlinepngtools(2).png</normaloff>../../../Downloads/output-onlinepngtools(2).png</iconset>
+      <normaloff>icons/output-onlinepngtools(2).png</normaloff>icons/output-onlinepngtools(2).png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -774,7 +774,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../Downloads/output-onlinepngtools(4).png</normaloff>../../../Downloads/output-onlinepngtools(4).png</iconset>
+      <normaloff>icons/output-onlinepngtools(4).png</normaloff>icons/output-onlinepngtools(4).png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -800,7 +800,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../Downloads/output-onlinepngtools(3).png</normaloff>../../../Downloads/output-onlinepngtools(3).png</iconset>
+      <normaloff>icons/output-onlinepngtools(3).png</normaloff>icons/output-onlinepngtools(3).png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -936,7 +936,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../Downloads/output-onlinepngtools(6).png</normaloff>../../../Downloads/output-onlinepngtools(6).png</iconset>
+      <normaloff>icons/output-onlinepngtools(6).png</normaloff>icons/output-onlinepngtools(6).png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -968,7 +968,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>backblue.png</normaloff>backblue.png</iconset>
+      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1035,7 +1035,7 @@ color: rgb(85, 87, 83);</string>
    <widget class="QPushButton" name="dutyfree_shop">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>390</x>
       <y>220</y>
       <width>221</width>
       <height>51</height>
@@ -1046,7 +1046,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../../Downloads/output-onlinepngtools(5).png</normaloff>../../../Downloads/output-onlinepngtools(5).png</iconset>
+      <normaloff>icons/output-onlinepngtools(5).png</normaloff>icons/output-onlinepngtools(5).png</iconset>
     </property>
     <property name="iconSize">
      <size>
