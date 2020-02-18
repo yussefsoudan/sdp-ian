@@ -26,7 +26,11 @@
    </size>
   </property>
   <property name="cursor">
+<<<<<<< HEAD
    <cursorShape>ArrowCursor</cursorShape>
+=======
+   <cursorShape>PointingHandCursor</cursorShape>
+>>>>>>> ffd22073349165ccdde4b9d6d0f9ee36955281d8
   </property>
   <property name="mouseTracking">
    <bool>false</bool>
@@ -39,9 +43,6 @@
   </property>
   <property name="windowOpacity">
    <double>1.000000000000000</double>
-  </property>
-  <property name="toolTipDuration">
-   <number>3</number>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -59,13 +60,13 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>0</number>
+   <number>9</number>
   </property>
   <widget class="QWidget" name="START">
    <property name="windowOpacity">
     <double>1.000000000000000</double>
    </property>
-   <property name="toolTipDuration">
+   <property name="toolTipDuration" stdset="0">
     <number>3</number>
    </property>
    <widget class="QPushButton" name="start">
@@ -113,8 +114,8 @@ background-color: rgb(98, 150, 187);</string>
    <widget class="QLabel" name="ian_icon">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>40</y>
+      <x>240</x>
+      <y>30</y>
       <width>245</width>
       <height>200</height>
      </rect>
@@ -250,7 +251,7 @@ color: rgb(85, 87, 83);</string>
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>30</y>
+      <y>10</y>
       <width>200</width>
       <height>200</height>
      </rect>
@@ -302,6 +303,17 @@ font: 20 40pt &quot;montserrat&quot;;</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
+      <widget class="QLabel" name="gate_label">
+       <property name="styleSheet">
+        <string notr="true">font: 20pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+       </property>
+       <property name="text">
+        <string>Gate:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QLabel" name="name_label">
        <property name="styleSheet">
         <string notr="true">font: 20pt &quot;montserrat&quot;;
@@ -320,17 +332,6 @@ color: rgb(85, 87, 83);</string>
        </property>
        <property name="text">
         <string>Flight:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="gate_label">
-       <property name="styleSheet">
-        <string notr="true">font: 20pt &quot;montserrat&quot;;
-color: rgb(85, 87, 83);</string>
-       </property>
-       <property name="text">
-        <string>Gate:</string>
        </property>
       </widget>
      </item>
@@ -1280,6 +1281,38 @@ color: rgb(85, 87, 83);</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="back_to_prev">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>81</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QWidget" name="NAVIGATING">
    <widget class="QLabel" name="navigating_to_label1">
@@ -1377,6 +1410,38 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="flat">
      <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="HELP">
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>20</y>
+      <width>121</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20 40pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+    </property>
+    <property name="text">
+     <string>Help</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>300</y>
+      <width>571</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Call For Help</string>
     </property>
    </widget>
   </widget>

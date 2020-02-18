@@ -22,6 +22,7 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.setupUi(self)
         self.setCurrentWidget(self.START)
 
+        # START
         self.start.clicked.connect(lambda: self.scan())
 
         # for testing
@@ -29,9 +30,11 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.next_success.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
         # end
 
+        # INFO
         self.go_somewhere.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
         self.back_to_info.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
 
+        # WHERE
         self.gate.clicked.connect(lambda: self.chooseDestination("Gate " + self.cust.gate, self.INFO))
 
         self.toilet.clicked.connect(lambda: self.chooseDestination("Toilets", self.INFO))
@@ -39,6 +42,10 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.food.clicked.connect(lambda: self.setCurrentWidget(self.FOOD))
         # self.back_to_where_food.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
 
+        self.shop.clicked.connect(lambda: self.setCurrentWidget(self.SHOPS))
+        # self.back_to_where_shops.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+
+        # FOOD
         self.bburr_food.clicked.connect(lambda: self.chooseDestination("Bar Burrito", self.FOOD))
         self.bking_food.clicked.connect(lambda: self.chooseDestination("Burger King", self.FOOD))
         self.kk_food.clicked.connect(lambda: self.chooseDestination("Krispy Kreme", self.FOOD))
@@ -48,9 +55,6 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.pret_food.clicked.connect(lambda: self.chooseDestination("Pret A Manger", self.FOOD))
         self.brewdog_food.clicked.connect(lambda: self.chooseDestination("Brewdog", self.FOOD))
         self.back_to_where_food.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
-
-        self.shop.clicked.connect(lambda: self.setCurrentWidget(self.SHOPS))
-        # self.back_to_where_shops.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
 
         # SHOPS
         self.whs_shop.clicked.connect(lambda: self.chooseDestination("WHSmith", self.SHOPS))
@@ -62,10 +66,11 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.accessorize_shop.clicked.connect(lambda: self.chooseDestination("Accessorize", self.SHOPS))
         self.hugoboss_shop.clicked.connect(lambda: self.chooseDestination("Hugo Boss", self.SHOPS))
         self.back_to_where_shops.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
-
+        
+        # CONFIRM_DEST
         self.not_correct.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
         
-
+        # NAVIGATION
         self.cancel_navigation.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
         self.go_somewhere_else.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
     
