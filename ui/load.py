@@ -34,9 +34,10 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.next_shop.clicked.connect(lambda: self.ChooseDestination("Next"))
 
         self.not_correct.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
-        self.yes_go.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
+        
 
         self.cancel_navigation.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.go_somewhere_else.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
 
 
     def StartScanning(self):
@@ -47,7 +48,8 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
     def ChooseDestination(self, location):
         self.setCurrentWidget(self.CONFIRM_DEST)
         self.destination_label.setText(location + "?")
-
+        self.yes_go.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
+        self.navigating_to_label2.setText(location)
 
 
 

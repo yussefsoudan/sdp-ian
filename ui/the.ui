@@ -579,13 +579,13 @@ color: rgb(85, 87, 83);</string>
    </widget>
   </widget>
   <widget class="QWidget" name="NAVIGATING">
-   <widget class="QLabel" name="navigating_to_label">
+   <widget class="QLabel" name="navigating_to_label1">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>70</y>
-      <width>341</width>
-      <height>111</height>
+      <x>270</x>
+      <y>30</y>
+      <width>241</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -593,7 +593,7 @@ color: rgb(85, 87, 83);</string>
 color: rgb(85, 87, 83);</string>
     </property>
     <property name="text">
-     <string>Navigating to _</string>
+     <string>Navigating to</string>
     </property>
    </widget>
    <widget class="QPushButton" name="cancel_navigation">
@@ -610,7 +610,7 @@ color: rgb(85, 87, 83);</string>
 color: rgb(85, 87, 83);</string>
     </property>
     <property name="text">
-     <string>Cancel</string>
+     <string>Stop</string>
     </property>
    </widget>
    <widget class="QPushButton" name="go_somewhere_else">
@@ -628,6 +628,26 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="text">
      <string>Go Somewhere Else</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="navigating_to_label2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>80</y>
+      <width>321</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20 26pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
