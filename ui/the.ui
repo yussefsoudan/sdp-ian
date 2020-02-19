@@ -31,6 +31,9 @@
   <property name="mouseTracking">
    <bool>false</bool>
   </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
   <property name="acceptDrops">
    <bool>false</bool>
   </property>
@@ -40,11 +43,8 @@
   <property name="windowOpacity">
    <double>1.000000000000000</double>
   </property>
-  <property name="toolTipDuration">
-   <number>3</number>
-  </property>
   <property name="autoFillBackground">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(255, 255, 255);
@@ -59,13 +59,19 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>4</number>
+   <number>3</number>
+  </property>
+  <property name="toolTipDuration" stdset="0">
+   <number>3</number>
   </property>
   <widget class="QWidget" name="START">
    <property name="windowOpacity">
     <double>1.000000000000000</double>
    </property>
-   <property name="toolTipDuration">
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="toolTipDuration" stdset="0">
     <number>3</number>
    </property>
    <widget class="QPushButton" name="start">
@@ -84,15 +90,17 @@ color: rgb(85, 87, 83);</string>
      <bool>false</bool>
     </property>
     <property name="autoFillBackground">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 20 50pt &quot;montserrat&quot;;
+alternate-background-color: rgb(0, 255, 0);
+selection-background-color: rgb(98, 150, 187);
 color: rgb(255, 255, 255);
 background-color: rgb(98, 150, 187);</string>
     </property>
     <property name="text">
-     <string>Start</string>
+     <string>Touch to Start</string>
     </property>
     <property name="iconSize">
      <size>
@@ -104,7 +112,7 @@ background-color: rgb(98, 150, 187);</string>
      <bool>false</bool>
     </property>
     <property name="default">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="flat">
      <bool>false</bool>
@@ -123,7 +131,7 @@ background-color: rgb(98, 150, 187);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>icons/logoG.png</pixmap>
+     <pixmap>icons/Ian Logos/ian_logo_grey.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -169,26 +177,13 @@ color: rgb(85, 87, 83);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="next_scan">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>380</y>
-      <width>84</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>next</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="info_1">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>0</y>
-      <width>51</width>
-      <height>81</height>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
@@ -196,7 +191,33 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/question.png</normaloff>icons/question.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_1">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -213,10 +234,10 @@ color: rgb(85, 87, 83);</string>
    <widget class="QLabel" name="retrieving_info_label">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>210</y>
-      <width>541</width>
-      <height>191</height>
+      <x>103</x>
+      <y>240</y>
+      <width>531</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -233,24 +254,11 @@ color: rgb(85, 87, 83);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="next_success">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>380</y>
-      <width>84</width>
-      <height>28</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>next</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="scanning_success_icon">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>10</y>
+      <x>268</x>
+      <y>20</y>
       <width>200</width>
       <height>200</height>
      </rect>
@@ -259,7 +267,7 @@ color: rgb(85, 87, 83);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>icons/tick.png</pixmap>
+     <pixmap>icons/UI Icons/tick_blue.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -276,27 +284,62 @@ color: rgb(85, 87, 83);</string>
       <height>101</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 150, 187);
+     <string notr="true">
+background-color: rgb(98, 150, 187);
 color: rgb(255, 255, 255);
 font: 20 40pt &quot;montserrat&quot;;</string>
     </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
     <property name="text">
-     <string>Take Me Somewhere...</string>
+     <string>  Take Me Somewhere</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/white_arrow.png</normaloff>icons/UI Icons/white_arrow.png</iconset>
     </property>
     <property name="iconSize">
      <size>
-      <width>16</width>
-      <height>16</height>
+      <width>70</width>
+      <height>70</height>
      </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>70</x>
       <y>70</y>
-      <width>531</width>
+      <width>581</width>
       <height>241</height>
      </rect>
     </property>
@@ -347,38 +390,12 @@ color: rgb(85, 87, 83);</string>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="info_2">
+   <widget class="QPushButton" name="back_to_start">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>0</y>
-      <width>51</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>icons/question.png</normaloff>icons/question.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>65</width>
-      <height>65</height>
-     </size>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="back_to_info_2">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>81</width>
+      <x>5</x>
+      <y>5</y>
+      <width>71</width>
       <height>71</height>
      </rect>
     </property>
@@ -393,12 +410,64 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
+      <normaloff>icons/UI Icons/back_blue.png</normaloff>icons/UI Icons/back_blue.png</iconset>
     </property>
     <property name="iconSize">
      <size>
-      <width>60</width>
-      <height>60</height>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="info_2">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_2">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
      </size>
     </property>
     <property name="flat">
@@ -429,7 +498,7 @@ color: rgb(85, 87, 83);</string>
      <rect>
       <x>50</x>
       <y>150</y>
-      <width>281</width>
+      <width>261</width>
       <height>251</height>
      </rect>
     </property>
@@ -439,8 +508,11 @@ color: rgb(85, 87, 83);</string>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
        </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
-        <string notr="true">font:20 34pt &quot;montserrat&quot;;
+        <string notr="true">font:20 30pt &quot;montserrat&quot;;
 background-color: rgb(98, 150, 187);
 color: rgb(255, 255, 255);</string>
        </property>
@@ -449,23 +521,35 @@ color: rgb(255, 255, 255);</string>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>icons/gate.png</normaloff>icons/gate.png</iconset>
+         <normaloff>icons/UI Icons/plane_white.png</normaloff>icons/UI Icons/plane_white.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>60</width>
+         <height>60</height>
         </size>
        </property>
        <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
+       </property>
+       <property name="default">
+        <bool>false</bool>
+       </property>
+       <property name="flat">
         <bool>false</bool>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="food">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
-        <string notr="true">font:20 34pt &quot;montserrat&quot;;
+        <string notr="true">font:20 30pt &quot;montserrat&quot;;
 background-color: rgb(98, 150, 187);
 color: rgb(255, 255, 255);</string>
        </property>
@@ -474,13 +558,16 @@ color: rgb(255, 255, 255);</string>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>icons/food.png</normaloff>icons/food.png</iconset>
+         <normaloff>icons/UI Icons/food_white.png</normaloff>icons/UI Icons/food_white.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>60</width>
+         <height>60</height>
         </size>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -489,9 +576,9 @@ color: rgb(255, 255, 255);</string>
    <widget class="QWidget" name="verticalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>400</x>
       <y>150</y>
-      <width>281</width>
+      <width>271</width>
       <height>251</height>
      </rect>
     </property>
@@ -504,8 +591,11 @@ color: rgb(255, 255, 255);</string>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
        </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
-        <string notr="true">font:20 34pt &quot;montserrat&quot;;
+        <string notr="true">font:20 30pt &quot;montserrat&quot;;
 background-color: rgb(98, 150, 187);
 color: rgb(255, 255, 255);</string>
        </property>
@@ -514,12 +604,12 @@ color: rgb(255, 255, 255);</string>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>icons/toilet.png</normaloff>icons/toilet.png</iconset>
+         <normaloff>icons/UI Icons/toilet_white.png</normaloff>icons/UI Icons/toilet_white.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>60</width>
+         <height>60</height>
         </size>
        </property>
        <property name="autoDefault">
@@ -535,8 +625,11 @@ color: rgb(255, 255, 255);</string>
      </item>
      <item>
       <widget class="QPushButton" name="shop">
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
        <property name="styleSheet">
-        <string notr="true">font:20 34pt &quot;montserrat&quot;;
+        <string notr="true">font:20 30pt &quot;montserrat&quot;;
 background-color: rgb(98, 150, 187);
 color: rgb(255, 255, 255);</string>
        </property>
@@ -545,24 +638,53 @@ color: rgb(255, 255, 255);</string>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>icons/shop.png</normaloff>icons/shop.png</iconset>
+         <normaloff>icons/UI Icons/shop_white.png</normaloff>icons/UI Icons/shop_white.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>40</width>
-         <height>40</height>
+         <width>60</width>
+         <height>60</height>
         </size>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="info_3">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
    <widget class="QPushButton" name="back_to_info">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>81</width>
+      <x>5</x>
+      <y>5</y>
+      <width>71</width>
       <height>71</height>
      </rect>
     </property>
@@ -577,25 +699,25 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
+      <normaloff>icons/UI Icons/back_blue.png</normaloff>icons/UI Icons/back_blue.png</iconset>
     </property>
     <property name="iconSize">
      <size>
-      <width>60</width>
-      <height>60</height>
+      <width>65</width>
+      <height>65</height>
      </size>
     </property>
     <property name="flat">
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="info_3">
+   <widget class="QPushButton" name="exit_3">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>0</y>
-      <width>51</width>
-      <height>81</height>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
@@ -603,7 +725,7 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/question.png</normaloff>icons/question.png</iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -641,64 +763,6 @@ color: rgb(85, 87, 83);</string>
      <size>
       <width>200</width>
       <height>200</height>
-     </size>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="back_to_where_food">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>81</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>60</width>
-      <height>60</height>
-     </size>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="info_4">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>0</y>
-      <width>51</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>icons/question.png</normaloff>icons/question.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>65</width>
-      <height>65</height>
      </size>
     </property>
     <property name="flat">
@@ -887,6 +951,90 @@ color: rgb(85, 87, 83);</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="info_4">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back_to_where_food">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/back_blue.png</normaloff>icons/UI Icons/back_blue.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_4">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QWidget" name="SHOPS">
    <widget class="QPushButton" name="whs_shop">
@@ -939,64 +1087,6 @@ color: rgb(85, 87, 83);</string>
      <size>
       <width>240</width>
       <height>240</height>
-     </size>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="back_to_where_shops">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>81</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>60</width>
-      <height>60</height>
-     </size>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="info_5">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>0</y>
-      <width>51</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>icons/question.png</normaloff>icons/question.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>65</width>
-      <height>65</height>
      </size>
     </property>
     <property name="flat">
@@ -1159,6 +1249,90 @@ color: rgb(85, 87, 83);</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="info_5">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back_to_where_shops">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/back_blue.png</normaloff>icons/UI Icons/back_blue.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_5">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QWidget" name="CONFIRM_DEST">
    <property name="styleSheet">
@@ -1257,10 +1431,10 @@ color: rgb(85, 87, 83);</string>
    <widget class="QPushButton" name="info_6">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>0</y>
-      <width>51</width>
-      <height>81</height>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="text">
@@ -1268,7 +1442,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/question.png</normaloff>icons/question.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1283,9 +1457,9 @@ color: rgb(85, 87, 83);</string>
    <widget class="QPushButton" name="back_to_prev">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>81</width>
+      <x>5</x>
+      <y>5</y>
+      <width>71</width>
       <height>71</height>
      </rect>
     </property>
@@ -1300,12 +1474,38 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/backblue.png</normaloff>icons/backblue.png</iconset>
+      <normaloff>icons/UI Icons/back_blue.png</normaloff>icons/UI Icons/back_blue.png</iconset>
     </property>
     <property name="iconSize">
      <size>
-      <width>60</width>
-      <height>60</height>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_6">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
      </size>
     </property>
     <property name="flat">
@@ -1366,7 +1566,7 @@ color: rgb(85, 87, 83);</string>
      <rect>
       <x>220</x>
       <y>20</y>
-      <width>451</width>
+      <width>361</width>
       <height>51</height>
      </rect>
     </property>
@@ -1387,33 +1587,7 @@ color: rgb(85, 87, 83);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="info_7">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>0</y>
-      <width>51</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>icons/question.png</normaloff>icons/question.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>65</width>
-      <height>65</height>
-     </size>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="info_label">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -1426,7 +1600,7 @@ color: rgb(85, 87, 83);</string>
      <string>Your Info</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="map_label">
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -1437,6 +1611,58 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="text">
      <string>MAP</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="info_7">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_7">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -1527,6 +1753,58 @@ color: rgb(85, 87, 83);</string>
      <string>Your Info</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="exit_8">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="info_8">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QWidget" name="HELP">
    <widget class="QLabel" name="label_2">
@@ -1602,6 +1880,57 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="text">
      <string>PushButton</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="EXIT">
+   <widget class="QLabel" name="exit_label">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>50</y>
+      <width>411</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20 40pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+    </property>
+    <property name="text">
+     <string>Are You Sure You Want to Exit?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancel_exit">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>280</y>
+      <width>90</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>GO BACK</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_button">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>280</y>
+      <width>90</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>EXIT</string>
     </property>
    </widget>
   </widget>

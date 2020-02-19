@@ -25,10 +25,6 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         # START
         self.start.clicked.connect(lambda: self.scan())
 
-        # for testing
-        self.next_scan.clicked.connect(lambda: self.setCurrentWidget(self.SUCCESS))
-        self.next_success.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
-        # end
 
         # INFO
         self.go_somewhere.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
