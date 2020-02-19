@@ -66,10 +66,10 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.accessorize_shop.clicked.connect(lambda: self.chooseDestination("Accessorize", self.SHOPS))
         self.hugoboss_shop.clicked.connect(lambda: self.chooseDestination("Hugo Boss", self.SHOPS))
         self.back_to_where_shops.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
-        
+
         # CONFIRM_DEST
         self.not_correct.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
-        
+
         # NAVIGATION
 
         # PAUSE
@@ -94,7 +94,7 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.flight_label.setText("Flight: " + self.cust.flight)
         self.gate_label.setText("Gate: " + self.cust.gate)
         self.depart_time_label.setText("Departure time: " + self.cust.depart_time)
-        
+
         QtTest.QTest.qWait(2000)
 
         if self.currentWidget() == self.SCAN: self.setCurrentWidget(self.SUCCESS)
@@ -111,11 +111,11 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.destination_label.setText(location + "?")
         self.navigating_to_label2.setText(location)
         self.navigating_to_label3.setText(location)
-        self.yes_go.clicked.connect(self.navigate(location))
+        self.yes_go.clicked.connect(lambda: self.navigate(location))
         self.back_to_prev.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
 
         # navigate here
-    
+
     def navigate(self, location):
 
         self.setCurrentWidget(self.NAVIGATING)
