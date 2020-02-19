@@ -59,7 +59,7 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>5</number>
+   <number>6</number>
   </property>
   <widget class="QWidget" name="START">
    <property name="windowOpacity">
@@ -719,7 +719,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/output-onlinepngtools.png</normaloff>icons/output-onlinepngtools.png</iconset>
+      <normaloff>icons/Food/brewdog.png</normaloff>icons/Food/brewdog.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -745,7 +745,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/output-onlinepngtools(2).png</normaloff>icons/output-onlinepngtools(2).png</iconset>
+      <normaloff>icons/Food/eat.png</normaloff>icons/Food/eat.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -771,7 +771,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/output-onlinepngtools(4).png</normaloff>icons/output-onlinepngtools(4).png</iconset>
+      <normaloff>icons/Food/pretamanger.png</normaloff>icons/Food/pretamanger.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -797,7 +797,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/output-onlinepngtools(3).png</normaloff>icons/output-onlinepngtools(3).png</iconset>
+      <normaloff>icons/Food/burgerking.png</normaloff>icons/Food/burgerking.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -823,7 +823,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/caffenerologo.png</normaloff>icons/caffenerologo.png</iconset>
+      <normaloff>icons/Food/caffenero.png</normaloff>icons/Food/caffenero.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -849,7 +849,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/yo-sushi-1.png</normaloff>icons/yo-sushi-1.png</iconset>
+      <normaloff>icons/Food/yo-sushi.png</normaloff>icons/Food/yo-sushi.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -875,7 +875,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/kk.png</normaloff>icons/kk.png</iconset>
+      <normaloff>icons/Food/kk.png</normaloff>icons/Food/kk.png</iconset>
     </property>
     <property name="iconSize">
      <size>
