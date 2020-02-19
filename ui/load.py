@@ -111,7 +111,7 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.destination_label.setText(location + "?")
         self.navigating_to_label2.setText(location)
         self.navigating_to_label3.setText(location)
-        self.yes_go.clicked.connect(self.navigate(location))
+        self.yes_go.clicked.connect(lambda: self.navigate(location))
         self.back_to_prev.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
 
         # navigate here
