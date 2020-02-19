@@ -40,6 +40,9 @@
   <property name="windowOpacity">
    <double>1.000000000000000</double>
   </property>
+  <property name="toolTipDuration">
+   <number>3</number>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
@@ -57,9 +60,6 @@ color: rgb(85, 87, 83);</string>
   </property>
   <property name="currentIndex">
    <number>8</number>
-  </property>
-  <property name="toolTipDuration" stdset="0">
-   <number>3</number>
   </property>
   <widget class="QWidget" name="START">
    <property name="windowOpacity">
