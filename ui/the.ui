@@ -59,7 +59,7 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>6</number>
+   <number>4</number>
   </property>
   <widget class="QWidget" name="START">
    <property name="windowOpacity">
@@ -907,7 +907,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/whsmith.png</normaloff>icons/whsmith.png</iconset>
+      <normaloff>icons/Shops/whsmith.png</normaloff>icons/Shops/whsmith.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -933,7 +933,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/output-onlinepngtools(6).png</normaloff>icons/output-onlinepngtools(6).png</iconset>
+      <normaloff>icons/Shops/next.png</normaloff>icons/Shops/next.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1017,7 +1017,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/ms-simply-food-1.png</normaloff>icons/ms-simply-food-1.png</iconset>
+      <normaloff>icons/Shops/mns.png</normaloff>icons/Shops/mns.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1043,7 +1043,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/output-onlinepngtools(5).png</normaloff>icons/output-onlinepngtools(5).png</iconset>
+      <normaloff>icons/Shops/worlddutyfree.png</normaloff>icons/Shops/worlddutyfree.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1069,7 +1069,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/accessorize.png</normaloff>icons/accessorize.png</iconset>
+      <normaloff>icons/Shops/accessorize.png</normaloff>icons/Shops/accessorize.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1095,7 +1095,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/superdrug_0.png</normaloff>icons/superdrug_0.png</iconset>
+      <normaloff>icons/Shops/superdrug.png</normaloff>icons/Shops/superdrug.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1121,7 +1121,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/fatface.png</normaloff>icons/fatface.png</iconset>
+      <normaloff>icons/Shops/fatface.png</normaloff>icons/Shops/fatface.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1147,7 +1147,7 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/hugoboss.png</normaloff>icons/hugoboss.png</iconset>
+      <normaloff>icons/Shops/hugoboss.png</normaloff>icons/Shops/hugoboss.png</iconset>
     </property>
     <property name="iconSize">
      <size>
