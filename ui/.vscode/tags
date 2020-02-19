@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+load.py	../load.py	1;"	kind:file	line:1
+sys	../load.py	/^import sys, time$/;"	kind:namespace	line:1
+time	../load.py	/^import sys, time$/;"	kind:namespace	line:1
+QtCore	../load.py	/^from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic$/;"	kind:namespace	line:3
+QtGui	../load.py	/^from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic$/;"	kind:namespace	line:3
+QtWidgets	../load.py	/^from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic$/;"	kind:namespace	line:3
+QtTest	../load.py	/^from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic$/;"	kind:namespace	line:3
+uic	../load.py	/^from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic$/;"	kind:namespace	line:3
+__version__	../load.py	/^__version__ = 0.1$/;"	kind:variable	line:5
+__author__	../load.py	/^__author__ = 'Daragh Meehan & Eloise Milliken'$/;"	kind:variable	line:6
+Customer	../load.py	/^class Customer:$/;"	kind:class	line:8
+name	../load.py	/^    name = "Joe Blogs"$/;"	kind:variable	line:10
+flight	../load.py	/^    flight = "AA100"$/;"	kind:variable	line:11
+gate	../load.py	/^    gate = "7"$/;"	kind:variable	line:12
+depart_time	../load.py	/^    depart_time = "15:00"$/;"	kind:variable	line:13
+qtdesigner_file	../load.py	/^qtdesigner_file  = "the.ui"$/;"	kind:variable	line:15
+IanUi	../load.py	/^class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):$/;"	kind:class	line:19
+cust	../load.py	/^    cust = Customer()$/;"	kind:variable	line:21
+__init__	../load.py	/^    def __init__(self):$/;"	kind:member	line:23
+scan	../load.py	/^    def scan(self):$/;"	kind:member	line:91
+chooseDestination	../load.py	/^    def chooseDestination(self, location, previous_widget):$/;"	kind:member	line:112
+navigate	../load.py	/^    def navigate(self, location):$/;"	kind:member	line:123
+main	../load.py	/^def main():$/;"	kind:function	line:130
