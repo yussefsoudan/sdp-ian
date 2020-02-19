@@ -1,5 +1,13 @@
 import sys, time
+
 from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic
+
+# the model and controller classes
+from IanUiCtrl import IanUiController
+from IanUiMod import IanUiModel
+
+__version__ = 0.1
+__author__ = 'Daragh Meehan & Eloise Milliken'
 
 class Customer:
 
@@ -8,11 +16,11 @@ class Customer:
     gate = "7"
     depart_time = "15:00"
 
-qtcreator_file  = "the.ui" # Enter file here.
-Ui_MainWindow, QtBaseClass = uic.loadUiType(qtcreator_file)
+qtdesigner_file  = "the.ui"
+Ui_MainWindow, QtBaseClass = uic.loadUiType(qtdesigner_file)
 
 
-class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
+class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
     cust = Customer()
 
@@ -20,15 +28,15 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         QtWidgets.QStackedWidget.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
+
         self.setCurrentWidget(self.START)
 
         # START
         self.start.clicked.connect(lambda: self.scan())
 
-
         # INFO
         self.go_somewhere.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
-        self.back_to_info.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.back_to_start.clicked.connect(lambda: self.setCurrentWidget(self.START))
 
         # WHERE
         self.gate.clicked.connect(lambda: self.chooseDestination("Gate " + self.cust.gate, self.WHERE))
@@ -40,6 +48,10 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         self.shop.clicked.connect(lambda: self.setCurrentWidget(self.SHOPS))
         # self.back_to_where_shops.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+
+        self.back_to_info.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+
+
 
         # FOOD
         self.bburr_food.clicked.connect(lambda: self.chooseDestination("Bar Burrito", self.FOOD))
@@ -71,13 +83,27 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         # PAUSE
 
         # Help buttons
-        self.info_1.clicked.connect(lambda: self.setCurrentWidget(self.HELP))
-        self.info_2.clicked.connect(lambda: self.setCurrentWidget(self.HELP))
-        self.info_3.clicked.connect(lambda: self.setCurrentWidget(self.HELP))
-        self.info_4.clicked.connect(lambda: self.setCurrentWidget(self.HELP))
-        self.info_5.clicked.connect(lambda: self.setCurrentWidget(self.HELP))
-        self.info_6.clicked.connect(lambda: self.setCurrentWidget(self.HELP))
-        self.info_7.clicked.connect(lambda: self.setCurrentWidget(self.HELP))
+        self.info_1.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.info_2.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.info_3.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.info_4.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.info_5.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.info_6.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.info_7.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.info_8.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+
+        # Exit buttons
+        self.exit_1.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        self.exit_2.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        self.exit_3.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        self.exit_4.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        self.exit_5.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        self.exit_6.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        self.exit_7.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        self.exit_8.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        
+        self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(self.START))
+        self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
 
 
     def scan(self):
@@ -119,9 +145,15 @@ class MyWindow(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.resume_navigation.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
 
 
-if __name__ == "__main__":
+def main():
     app = QtWidgets.QApplication(sys.argv)
-    window = MyWindow()
-    window.show()
-    app.exec_()
-    sys.exit()
+    app.setStyle('plastique')
+    model = IanUiModel()
+    view = IanUi()
+    view.show()
+    IanUiController(model=model, view=view)
+    sys.exit(app.exec_())
+
+
+if __name__ == "__main__":
+    main()
