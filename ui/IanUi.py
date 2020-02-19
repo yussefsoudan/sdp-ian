@@ -147,6 +147,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
+    app.setStyle('plastique')
     model = IanUiModel()
     view = IanUi()
     view.show()
