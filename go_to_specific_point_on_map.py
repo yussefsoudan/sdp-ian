@@ -93,6 +93,13 @@ if __name__ == '__main__':
 
         if success:
             rospy.loginfo("Hooray, reached the desired pose")
+            #Erodotos , go to initial position after reaching the gate.
+            rospy.sleep(10)
+            position = {'x': -0.1111, 'y' : -0.0244}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.7038, 'r4' : 0.7103}
+            rospy.loginfo("Go to (%s, %s) pose", position['x'], position['y'])
+            success = navigator.goto(position, quaternion)
+
         else:
             rospy.loginfo("The base failed to reach the desired pose")
 
