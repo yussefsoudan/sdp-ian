@@ -76,33 +76,49 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.back_to_where_shops.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
 
         # CONFIRM_DEST
-        self.not_correct.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+
 
         # NAVIGATION
+        self.passenger_info_1.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
+        "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
 
         # PAUSE
+        self.passenger_info_2.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
+        "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
 
         # Help buttons
-        self.info_1.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
-        self.info_2.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
-        self.info_3.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
-        self.info_4.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
-        self.info_5.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
-        self.info_6.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
-        self.info_7.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
-        self.info_8.clicked.connect(lambda: self.setCurrentWidget(self.INFO))
+        self.info_1.clicked.connect(lambda: self.help(self.SCAN))
+        self.info_2.clicked.connect(lambda: self.help(self.INFO))
+        self.info_3.clicked.connect(lambda: self.help(self.WHERE))
+        self.info_4.clicked.connect(lambda: self.help(self.FOOD))
+        self.info_5.clicked.connect(lambda: self.help(self.SHOPS))
+        self.info_6.clicked.connect(lambda: self.help(self.CONFIRM_DEST))
+        self.info_7.clicked.connect(lambda: self.help(self.NAVIGATING))
+        self.info_8.clicked.connect(lambda: self.help(self.PAUSE))
 
         # Exit buttons
-        self.exit_1.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
-        self.exit_2.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
-        self.exit_3.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
-        self.exit_4.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
-        self.exit_5.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
-        self.exit_6.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
-        self.exit_7.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
-        self.exit_8.clicked.connect(lambda: self.setCurrentWidget(self.EXIT))
+        self.exit_1.clicked.connect(lambda: self.exit(self.SCAN))
+        self.exit_2.clicked.connect(lambda: self.exit(self.INFO))
+        self.exit_3.clicked.connect(lambda: self.exit(self.WHERE))
+        self.exit_4.clicked.connect(lambda: self.exit(self.FOOD))
+        self.exit_5.clicked.connect(lambda: self.exit(self.SHOPS))
+        self.exit_6.clicked.connect(lambda: self.exit(self.CONFIRM_DEST))
+        self.exit_7.clicked.connect(lambda: self.exit(self.NAVIGATING))
+        self.exit_8.clicked.connect(lambda: self.exit(self.PAUSE))
         
+
         self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(self.START))
+        self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
+
+    def help(self, previous_widget):
+        self.setCurrentWidget(self.HELP)
+
+
+        self.help_back.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
+
+    def exit(self, previous_widget):
+        self.setCurrentWidget(self.EXIT)
+        self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
         self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
 
 
@@ -136,13 +152,18 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.yes_go.clicked.connect(lambda: self.navigate(location))
         self.back_to_prev.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
 
-        # navigate here
+
 
     def navigate(self, location):
 
         self.setCurrentWidget(self.NAVIGATING)
+
+
+        # navigate here
+
         self.pause_navigation.clicked.connect(lambda: self.setCurrentWidget(self.PAUSE))
         self.resume_navigation.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
+        self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
 
 
 def main():
