@@ -1,4 +1,4 @@
-import sys, time
+import sys, time, os
 
 from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic
 
@@ -78,13 +78,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         # CONFIRM_DEST
 
 
-        # NAVIGATION
-        self.passenger_info_1.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
-        "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
-
-        # PAUSE
-        self.passenger_info_2.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
-        "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
+        
 
         # COMPLETE
 
@@ -133,14 +127,31 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         self.setCurrentWidget(self.SCAN)
 
-        # scan here
+        QtTest.QTest.qWait(1000)
+
+        os.system("python ~/Desktop/Demo2/Scanning/realtime.py")
+        info_file = open("info_file.txt","r")
+        file_lines = info_file.readlines()
+        self.cust.name = file_lines[0].strip()
+        self.cust.flight = file_lines[1].strip()
+        self.cust.gate = file_lines[2].strip()
+        gate_status = file_lines[3].strip()
+        board_time = file_lines[4].strip()
+        self.cust.depart_time = file_lines[5].strip()
+        dest = file_lines[6].strip()
 
         self.name_label.setText("Name: " + self.cust.name)
         self.flight_label.setText("Flight: " + self.cust.flight)
         self.gate_label.setText("Gate: " + self.cust.gate)
         self.depart_time_label.setText("Departure time: " + self.cust.depart_time)
 
-        QtTest.QTest.qWait(2000)
+	    # NAVIGATION
+        self.passenger_info_1.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
+        "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
+
+        # PAUSE
+        self.passenger_info_2.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
+        "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
 
         if self.currentWidget() == self.SCAN: self.setCurrentWidget(self.SUCCESS)
 
@@ -165,9 +176,9 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         self.setCurrentWidget(self.NAVIGATING)
 
+        QtTest.QTest.qWait(1000)
 
-        # navigate here
-
+        os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
         self.pause_navigation.clicked.connect(lambda: self.setCurrentWidget(self.PAUSE))
         self.resume_navigation.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
         self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
@@ -178,6 +189,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
 
 def main():
+    os.system(" python ~/Desktop/Demo2/Navigation/publish_initial_pos.py")
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle('plastique')
     model = IanUiModel()
