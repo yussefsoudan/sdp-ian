@@ -78,7 +78,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         # CONFIRM_DEST
 
 
-        
+
 
         # COMPLETE
 
@@ -179,13 +179,18 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         QtTest.QTest.qWait(1000)
 
         os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
-        self.pause_navigation.clicked.connect(lambda: self.setCurrentWidget(self.PAUSE))
-        self.resume_navigation.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
-        self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+        self.pause_navigation.clicked.connect(lambda: self.pause(location))
 
-        QtTest.QTest.qWait(6000)
+
+        #QtTest.QTest.qWait(6000)
 
         self.setCurrentWidget(self.COMPLETE)
+
+    def pause(self, location):
+
+        self.setCurrentWidget(self.PAUSE)
+        self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+        self.resume_navigation.clicked.connect(lambda: self.navigate(location))
 
 
 def main():
