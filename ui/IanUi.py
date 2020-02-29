@@ -120,7 +120,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
     def exit(self, previous_widget):
         self.setCurrentWidget(self.EXIT)
         self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
-        self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
+        self.exit_button.clicked.connect(lambda: self.go_hub())
 
 
     def scan(self):
@@ -178,17 +178,19 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         QtTest.QTest.qWait(1000)
 
-        os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
+        # os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
+	os.system(" python ~/Desktop/Demo2/Navigation/go_and_stay.py {}".format(self.cust.gate))
         self.pause_navigation.clicked.connect(lambda: self.pause(location))
 
-
-        #QtTest.QTest.qWait(6000)
-
-        self.setCurrentWidget(self.COMPLETE)
+        # QtTest.QTest.qWait(6000)
+        # self.setCurrentWidget(self.COMPLETE)
 
     def pause(self, location):
 
         self.setCurrentWidget(self.PAUSE)
+	QtTest.QTest.qWait(100)
+	os.system(" python ~/Desktop/Demo2/Navigation/pause.py")
+	
         self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
         self.resume_navigation.clicked.connect(lambda: self.navigate(location))
 
