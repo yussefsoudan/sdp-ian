@@ -13,7 +13,7 @@ class Customer:
 
     name = "Joe Blogs"
     flight = "AA100"
-    gate = "7"
+    gate = "2"
     depart_time = "15:00"
 
 qtdesigner_file  = "the.ui"
@@ -86,6 +86,11 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.passenger_info_2.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
         "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
 
+        # COMPLETE
+
+        self.more_help.clicked.connect(lambda: self.setCurrentWidget(self.SCAN))
+        self.no_more_help.clicked.connect(lambda: self.exit(self.COMPLETE))
+
         # Help buttons
         self.info_1.clicked.connect(lambda: self.help(self.SCAN))
         self.info_2.clicked.connect(lambda: self.help(self.INFO))
@@ -95,6 +100,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.info_6.clicked.connect(lambda: self.help(self.CONFIRM_DEST))
         self.info_7.clicked.connect(lambda: self.help(self.NAVIGATING))
         self.info_8.clicked.connect(lambda: self.help(self.PAUSE))
+        self.info_9.clicked.connect(lambda: self.help(self.COMPLETE))
 
         # Exit buttons
         self.exit_1.clicked.connect(lambda: self.exit(self.SCAN))
@@ -105,7 +111,8 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.exit_6.clicked.connect(lambda: self.exit(self.CONFIRM_DEST))
         self.exit_7.clicked.connect(lambda: self.exit(self.NAVIGATING))
         self.exit_8.clicked.connect(lambda: self.exit(self.PAUSE))
-        
+        self.exit_9.clicked.connect(lambda: self.exit(self.COMPLETE))
+
 
         self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(self.START))
         self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
@@ -164,6 +171,10 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.pause_navigation.clicked.connect(lambda: self.setCurrentWidget(self.PAUSE))
         self.resume_navigation.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
         self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+
+        QtTest.QTest.qWait(6000)
+
+        self.setCurrentWidget(self.COMPLETE)
 
 
 def main():
