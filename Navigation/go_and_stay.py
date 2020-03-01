@@ -87,6 +87,41 @@ if __name__ == '__main__':
             position = {'x': 3.1872, 'y' : -0.1071}
             quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : -0.0014, 'r4' : 0.9999}
             print("go to gate 3")
+        elif gate_number == "next":
+            # Customize the following values so they are appropriate for your location
+            position = {'x': 0.490000, 'y' :1.629999}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.937488, 'r4' : 0.348016}
+            print("go to caffee next")
+        elif gate_number == "boss":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':1.2200001, 'y' : 2.489999}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.7071067, 'r4' : 0.70710}
+            print("go to hugo boss")
+        elif gate_number == "superdrug":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':  2.530000, 'y' : 2.49999}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.695228, 'r4' : 0.71878}
+            print("go to superdrug")
+        elif gate_number == "toilets":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':  0.87999, 'y' : 1.11999}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : -0.707106, 'r4' : 0.7071067}
+            print("go to toilets")
+        elif gate_number == "barburrito":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':  2.637212, 'y' : 1.188111}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.951828, 'r4' : 0.306629}
+            print("go to barburrito")
+        elif gate_number == "burgerking":
+            # Customize the following values so they are appropriate for your location
+            position = {'x': 1.7798051, 'y' : 1.3155964}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' :0.25879017, 'r4' : 0.96593356}
+            print("go to burger king")
+        elif gate_number == "nero":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':  2.23519587, 'y' : 1.991406}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : -0.7233548, 'r4' :0.6904765}
+            print("go to caffee nero")
 
         rospy.loginfo("Go to (%s, %s) pose", position['x'], position['y'])
         success = navigator.goto(position, quaternion)
