@@ -1,4 +1,5 @@
-# The Controller class to connect the GUI and the model
+# Links up the UI buttons, and controls the scanning and navigation processes. It is the Controller of the program.
+
 class IanUiController:
     def __init__(self, model, view):
         self.model = model
@@ -7,7 +8,7 @@ class IanUiController:
         self.connectSignals()
     
     def connectSignals(self):
-        print('')
+        pass
     #     """Connect signals and slots."""
     #     for btnText, btn in self._view.buttons.items():
     #         if btnText not in {'=', 'C'}:
