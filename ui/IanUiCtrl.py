@@ -7,7 +7,7 @@ class IanUiController:
         self.connectSignals()
     
     def connectSignals(self):
-        print(1)
+        print('')
     #     """Connect signals and slots."""
     #     for btnText, btn in self._view.buttons.items():
     #         if btnText not in {'=', 'C'}:
