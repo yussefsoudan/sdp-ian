@@ -13,7 +13,7 @@ class Customer:
 
     name = "Joe Blogs"
     flight = "AA100"
-    gate = "7"
+    gate = "2"
     depart_time = "15:00"
 
 qtdesigner_file  = "the.ui"
@@ -78,13 +78,12 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         # CONFIRM_DEST
 
 
-        # NAVIGATION
-        self.passenger_info_1.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
-        "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
 
-        # PAUSE
-        self.passenger_info_2.setText("Name: " + self.cust.name + "\n" + "Flight: " + self.cust.flight + "\n"
-        "Gate: " + self.cust.gate + "\n" + "Departure time: " + self.cust.depart_time)
+
+        # COMPLETE
+
+        self.more_help.clicked.connect(lambda: self.setCurrentWidget(self.SCAN))
+        self.no_more_help.clicked.connect(lambda: self.exit(self.COMPLETE))
 
         # Help buttons
         self.info_1.clicked.connect(lambda: self.help(self.SCAN))
@@ -95,6 +94,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.info_6.clicked.connect(lambda: self.help(self.CONFIRM_DEST))
         self.info_7.clicked.connect(lambda: self.help(self.NAVIGATING))
         self.info_8.clicked.connect(lambda: self.help(self.PAUSE))
+        self.info_9.clicked.connect(lambda: self.help(self.COMPLETE))
 
         # Exit buttons
         self.exit_1.clicked.connect(lambda: self.exit(self.SCAN))
@@ -105,7 +105,8 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.exit_6.clicked.connect(lambda: self.exit(self.CONFIRM_DEST))
         self.exit_7.clicked.connect(lambda: self.exit(self.NAVIGATING))
         self.exit_8.clicked.connect(lambda: self.exit(self.PAUSE))
-        
+        self.exit_9.clicked.connect(lambda: self.exit(self.COMPLETE))
+
 
         self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(self.START))
         self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
@@ -119,7 +120,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
     def exit(self, previous_widget):
         self.setCurrentWidget(self.EXIT)
         self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
-        self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
+        self.exit_button.clicked.connect(lambda: self.go_hub())
 
 
     def scan(self):
@@ -174,14 +175,25 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
     def navigate(self, location):
 
         self.setCurrentWidget(self.NAVIGATING)
-        
+
         QtTest.QTest.qWait(1000)
 
-        os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
-        self.pause_navigation.clicked.connect(lambda: self.setCurrentWidget(self.PAUSE))
-        self.resume_navigation.clicked.connect(lambda: self.setCurrentWidget(self.NAVIGATING))
+        # os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
+	os.system(" python ~/Desktop/Demo2/Navigation/go_and_stay.py {}".format(self.cust.gate))
+        self.pause_navigation.clicked.connect(lambda: self.pause(location))
+
+        # QtTest.QTest.qWait(6000)
+        # self.setCurrentWidget(self.COMPLETE)
+
+    def pause(self, location):
+
+        self.setCurrentWidget(self.PAUSE)
+	QtTest.QTest.qWait(100)
+	os.system(" python ~/Desktop/Demo2/Navigation/pause.py")
+	
         self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
-	    self.setCurrentWidget(self.START)
+        self.resume_navigation.clicked.connect(lambda: self.navigate(location))
+
 
 def main():
     os.system(" python ~/Desktop/Demo2/Navigation/publish_initial_pos.py")

@@ -62,7 +62,10 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>1</number>
+   <number>10</number>
+  </property>
+  <property name="toolTipDuration" stdset="0">
+   <number>3</number>
   </property>
   <widget class="QWidget" name="START">
    <property name="windowOpacity">
@@ -1343,9 +1346,9 @@ color: rgb(85, 87, 83);</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>110</y>
+      <y>80</y>
       <width>731</width>
-      <height>81</height>
+      <height>151</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1357,6 +1360,9 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="yes_go">
@@ -1857,6 +1863,142 @@ color: rgb(255, 255, 255);</string>
    <zorder>info_8</zorder>
    <zorder>pause_new_goal</zorder>
   </widget>
+  <widget class="QWidget" name="COMPLETE">
+   <widget class="QLabel" name="destination_reached">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>10</y>
+      <width>521</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20 38pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+    </property>
+    <property name="text">
+     <string>You've reached your destination!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="exit_9">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="info_9">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>5</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>65</width>
+      <height>65</height>
+     </size>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="more_help_label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>180</y>
+      <width>741</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20 36pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+    </property>
+    <property name="text">
+     <string>Will you need more help later?</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="more_help">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>290</y>
+      <width>171</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:20 40pt &quot;montserrat&quot;;
+background-color: rgb(98, 150, 187);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>YES</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="no_more_help">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>290</y>
+      <width>171</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font:20 40pt &quot;montserrat&quot;;
+background-color: rgb(98, 150, 187);
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>NO</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QWidget" name="HELP">
    <widget class="QLabel" name="label_2">
     <property name="geometry">
@@ -1946,9 +2088,9 @@ font: 20 40pt &quot;montserrat&quot;;</string>
    <widget class="QLabel" name="exit_label">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>50</y>
-      <width>411</width>
+      <x>60</x>
+      <y>30</y>
+      <width>621</width>
       <height>171</height>
      </rect>
     </property>
@@ -1969,8 +2111,8 @@ color: rgb(85, 87, 83);</string>
    <widget class="QPushButton" name="cancel_exit">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>280</y>
+      <x>120</x>
+      <y>220</y>
       <width>201</width>
       <height>91</height>
      </rect>
@@ -1987,8 +2129,8 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="exit_button">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>280</y>
+      <x>390</x>
+      <y>220</y>
       <width>201</width>
       <height>91</height>
      </rect>
@@ -2002,6 +2144,23 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>EXIT</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>711</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20 32pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+    </property>
+    <property name="text">
+     <string>IAN will be sent back to the hub</string>
     </property>
    </widget>
   </widget>
