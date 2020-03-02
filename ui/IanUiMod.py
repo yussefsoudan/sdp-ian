@@ -30,7 +30,7 @@ class Customer:
 sampleCustomer = Customer("Joe Bloggs", "AA100", "2", "15:00")
 
 class IanUiModel:
-
+    global_loc = ""
     cust = Customer()
 
     def __init__(self):
@@ -105,32 +105,37 @@ class IanUiModel:
         view.destination_label.setText(location + "?")
         view.navigating_to_label2.setText(location)
         view.navigating_to_label3.setText(location)
-        view.yes_go.clicked.connect(lambda: self.navigate(view, location))
+        print("Location given choose Dest:",location)
+        global global_loc
+        global_loc = location
+        
         view.back_to_prev.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
     
     # the navigation functionality
-    def navigate(self, view, location):
+    def navigate(self, view):
+        QtTest.QTest.qWait(10)
+
         view.setCurrentWidget(view.NAVIGATING)
 
         QtTest.QTest.qWait(10)
-        
+        # print("Location given Navigate:",location)
         # os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
-        os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(self.cust.gate))
-        view.pause_navigation.clicked.connect(lambda: self.pause(view, location))
+        os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
+        #view.pause_navigation.clicked.connect(lambda: self.pause(view))
 
         # QtTest.QTest.qWait(6000)
         # self.setCurrentWidget(self.COMPLETE)
     
     # the pausing functionality
     # move to ctrl?
-    def pause(self, view, location):
+    def pause(self, view):
 
         view.setCurrentWidget(view.PAUSE)
         QtTest.QTest.qWait(10)
-        os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/pause.py")
+        os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/cancel_goal.py")
 	
-        view.pause_new_goal.clicked.connect(lambda: view.setCurrentWidget(view.WHERE))
-        view.resume_navigation.clicked.connect(lambda: self.navigate(view, location))
+        #view.pause_new_goal.clicked.connect(lambda: view.setCurrentWidget(view.WHERE))
+        #view.resume_navigation.clicked.connect(lambda: self.navigate(view)
 
     def goHub(self, view):
         pass

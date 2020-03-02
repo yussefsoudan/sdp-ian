@@ -77,6 +77,8 @@ class IanUiController:
         self.view.cancel_exit.clicked.connect(lambda: self.view.setCurrentWidget(self.view.START))
         self.view.exit_button.clicked.connect(lambda: self.view.setCurrentWidget(self.view.START))
 
+        self.view.yes_go.clicked.connect(lambda: self.model.navigate(self.view))
+        self.view.pause_navigation.clicked.connect(lambda: self.model.pause(self.view))
 
-
-
+        self.view.pause_new_goal.clicked.connect(lambda: self.view.setCurrentWidget(self.view.WHERE))
+        self.view.resume_navigation.clicked.connect(lambda: self.model.navigate(self.view))

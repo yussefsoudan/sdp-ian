@@ -13,20 +13,14 @@ class GoToPose():
         rospy.on_shutdown(self.shutdown)
         self.move_base = actionlib.SimpleActionClient("move_base", MoveBaseAction)
 
-	    # Get the current position from move_base/feedback 
-	    self.position_msg = rospy.wait_for_message('/move_base/feedback', MoveBaseActionFeedback)
 
-        rospy.loginfo("Wait for the action server to come up")
+        rospy.loginfo("CANCEL SCRIPT MESSAGE : Wait for the action server to come up")
         self.move_base.wait_for_server(rospy.Duration(5))
 
     def stop(self):
         # Send a goal = current position
         self.goal_sent = True
-        goal = MoveBaseGoal()
-        goal.target_pose.header.frame_id = 'map'
-        goal.target_pose.header.stamp = rospy.Time.now()
-        goal.target_pose.pose = self.position_msg.feedback.base_position.pose
-        self.move_base.send_goal(goal)
+        self.move_base.cancel_all_goals()
 
         result = False
         self.goal_sent = False
