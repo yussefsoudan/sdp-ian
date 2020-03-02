@@ -23,6 +23,9 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType(qtdesigner_file)
 class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
     cust = Customer()
+    global_location = ""
+
+
 
     def __init__(self):
         QtWidgets.QStackedWidget.__init__(self)
@@ -39,6 +42,8 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.back_to_start.clicked.connect(lambda: self.setCurrentWidget(self.START))
 
         # WHERE
+
+
         self.gate.clicked.connect(lambda: self.chooseDestination("Gate " + self.cust.gate, self.WHERE))
 
         self.toilet.clicked.connect(lambda: self.chooseDestination("Toilets", self.WHERE))
@@ -111,14 +116,49 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(self.START))
         self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
 
+        self.yes_go.clicked.connect(lambda: self.navigate())
+        self.pause_navigation.clicked.connect(lambda: self.pause())
+        self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
+        self.resume_navigation.clicked.connect(lambda: self.navigate())
+
+
+
+    def popUp(self, string):
+        widget = self.currentWidget()
+        popUp = QtWidgets.QWidget(parent = widget)
+        popUp.setGeometry(120, 60,500, 300)
+        popUp.setStyleSheet("background-color: rgb(204, 0, 0);")
+        label = QtWidgets.QLabel(parent = popUp)
+        label.setGeometry(10, 10, 480, 280)
+        label.setText(string)
+        label.setWordWrap(True)
+        label.setStyleSheet("background-color: rgb(255, 255, 255);font: 20 30pt montserrat; color: rgb(204, 0, 0);")
+        popButton = QtWidgets.QPushButton(parent = popUp)
+        popButton.setGeometry(435, 10, 50, 50)
+        popButton.setText("x")
+        popButton.setStyleSheet("font: 20 30pt montserrat;")
+
+        popButton.setFlat(True)
+        popButton.clicked.connect(lambda: popUp.close())
+        popUp.show()
+
+
     def help(self, previous_widget):
         self.setCurrentWidget(self.HELP)
+
+
+
+
+        QtTest.QTest.qWait(1000)
+
+
 
 
         self.help_back.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
 
     def exit(self, previous_widget):
         self.setCurrentWidget(self.EXIT)
+        self.popUp("update!!!")
         self.cancel_exit.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
         self.exit_button.clicked.connect(lambda: self.setCurrentWidget(self.START))
 
@@ -129,16 +169,16 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         QtTest.QTest.qWait(1000)
 
-        os.system("python ~/Desktop/Demo2/Scanning/realtime.py")
-        info_file = open("info_file.txt","r")
-        file_lines = info_file.readlines()
-        self.cust.name = file_lines[0].strip()
-        self.cust.flight = file_lines[1].strip()
-        self.cust.gate = file_lines[2].strip()
-        gate_status = file_lines[3].strip()
-        board_time = file_lines[4].strip()
-        self.cust.depart_time = file_lines[5].strip()
-        dest = file_lines[6].strip()
+        #os.system("python ~/Desktop/Demo2/Scanning/realtime.py")
+        #info_file = open("info_file.txt","r")
+        #file_lines = info_file.readlines()
+        #self.cust.name = file_lines[0].strip()
+        #self.cust.flight = file_lines[1].strip()
+        #self.cust.gate = file_lines[2].strip()
+        #gate_status = file_lines[3].strip()
+        #board_time = file_lines[4].strip()
+        #self.cust.depart_time = file_lines[5].strip()
+        #dest = file_lines[6].strip()
 
         self.name_label.setText("Name: " + self.cust.name)
         self.flight_label.setText("Flight: " + self.cust.flight)
@@ -167,34 +207,39 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.destination_label.setText(location + "?")
         self.navigating_to_label2.setText(location)
         self.navigating_to_label3.setText(location)
-        self.yes_go.clicked.connect(lambda: self.navigate(location))
+        print("local " + location)
+        global global_location
+        global_location = location
+        print("global " + global_location)
+
         self.back_to_prev.clicked.connect(lambda: self.setCurrentWidget(previous_widget))
 
 
 
-    def navigate(self, location):
+    def navigate(self):
+
+        print("navigate" + global_location)
 
         self.setCurrentWidget(self.NAVIGATING)
 
         QtTest.QTest.qWait(1000)
 
-        os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
-        self.pause_navigation.clicked.connect(lambda: self.pause(location))
+        #os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
+
 
 
         #QtTest.QTest.qWait(6000)
 
-        self.setCurrentWidget(self.COMPLETE)
+        #self.setCurrentWidget(self.COMPLETE)
 
-    def pause(self, location):
+    def pause(self):
+        print("pause" + global_location)
 
         self.setCurrentWidget(self.PAUSE)
-        self.pause_new_goal.clicked.connect(lambda: self.setCurrentWidget(self.WHERE))
-        self.resume_navigation.clicked.connect(lambda: self.navigate(location))
 
 
 def main():
-    os.system(" python ~/Desktop/Demo2/Navigation/publish_initial_pos.py")
+    #os.system(" python ~/Desktop/Demo2/Navigation/publish_initial_pos.py")
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle('plastique')
     model = IanUiModel()

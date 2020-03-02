@@ -59,7 +59,7 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>10</number>
+   <number>7</number>
   </property>
   <property name="toolTipDuration" stdset="0">
    <number>3</number>
