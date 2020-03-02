@@ -13,11 +13,10 @@ class Customer:
         self.flight = flight
         self.gate = gate
         self.depart_time = depart_time
-
-        if (name == None or flight == None or gate == None or depart_time == None):
-            self.isNullPassenger = True
-        else:
-            self.isNullPassenger = False
+    
+    def isNullPassenger(self):
+        return (self.name == None or self.flight == None
+        or self.gate == None or self.depart_time == None)
     
     # clears customer data
     def clearCustomer(self):
@@ -39,7 +38,6 @@ class IanUiModel:
     
     # the scanning functionality
     def scan(self, view):
-
         view.setCurrentWidget(view.SCAN)
 
         QtTest.QTest.qWait(10)
@@ -56,11 +54,13 @@ class IanUiModel:
         dest = file_lines[6].strip()
         
         # if scanning failed
-        if self.cust.isNullPassenger:
+        if self.cust.isNullPassenger():
             # maybe add scanning failed pop up?
             view.setCurrentWidget(view.START)
             return
         
+        view.setCurrentWidget(view.SUCCESS)
+
         # for reuse
         name_string = "Name: " + self.cust.name
         flight_string = "Flight: " + self.cust.flight
@@ -84,8 +84,6 @@ class IanUiModel:
         # for testing
         # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
 
-        view.setCurrentWidget(view.SUCCESS)
-
         QtTest.QTest.qWait(2000)
 
         # for testing
@@ -93,9 +91,25 @@ class IanUiModel:
 
         view.setCurrentWidget(view.INFO)
     
+    def help(self, view, previous_widget):
+        view.setCurrentWidget(view.HELP)
+        view.help_back.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
+
+    def exit(self, view, previous_widget):
+        view.setCurrentWidget(view.EXIT)
+        view.cancel_exit.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
+        view.exit_button.clicked.connect(lambda: self.goHub(view))
+
+    def chooseDestination(self, view, location, previous_widget):
+        view.setCurrentWidget(view.CONFIRM_DEST)
+        view.destination_label.setText(location + "?")
+        view.navigating_to_label2.setText(location)
+        view.navigating_to_label3.setText(location)
+        view.yes_go.clicked.connect(lambda: self.navigate(view, location))
+        view.back_to_prev.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
+    
     # the navigation functionality
     def navigate(self, view, location):
-
         view.setCurrentWidget(view.NAVIGATING)
 
         QtTest.QTest.qWait(10)
@@ -118,5 +132,7 @@ class IanUiModel:
         view.pause_new_goal.clicked.connect(lambda: view.setCurrentWidget(view.WHERE))
         view.resume_navigation.clicked.connect(lambda: self.navigate(view, location))
 
-    def blank(self):
+    def goHub(self, view):
         pass
+
+    

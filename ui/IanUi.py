@@ -18,12 +18,12 @@ Ui_MainWindow, QtBaseClass = uic.loadUiType(qtdesigner_file)
 class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
     def __init__(self):
-        
         QtWidgets.QStackedWidget.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
 
         self.setCurrentWidget(self.START)
+
 
 def main():
     os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/publish_initial_pos.py")
