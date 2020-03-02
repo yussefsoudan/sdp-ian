@@ -10,7 +10,7 @@ class IanUiController:
     def connectButtons(self):
 
         # START
-        self.view.start.clicked.connect(lambda: self.view.scan())
+        self.view.start.clicked.connect(lambda: self.model.scan(self.view))
 
         # INFO
         self.view.go_somewhere.clicked.connect(lambda: self.view.setCurrentWidget(self.view.WHERE))
@@ -86,7 +86,7 @@ class IanUiController:
 
 
     def help(self, previous_widget):
-        self.view.setCurrentWidget(self.HELP)
+        self.view.setCurrentWidget(self.view.HELP)
 
 
         self.view.help_back.clicked.connect(lambda: self.view.setCurrentWidget(previous_widget))
@@ -94,14 +94,10 @@ class IanUiController:
     def exit(self, previous_widget):
         self.view.setCurrentWidget(self.view.EXIT)
         self.view.cancel_exit.clicked.connect(lambda: self.view.setCurrentWidget(previous_widget))
-        self.view.exit_button.clicked.connect(lambda: self.go_hub())widget):
-        self.view.setCurrentWidget(self.view.EXIT)
-        self.view.cancel_exit.clicked.connect(lambda: self.view.setCurrentWidget(previous_widget))
         self.view.exit_button.clicked.connect(lambda: self.go_hub())
 
-
+    # to model?
     def chooseDestination(self, location, previous_widget):
-
         self.view.setCurrentWidget(self.view.CONFIRM_DEST)
         self.view.destination_label.setText(location + "?")
         self.view.navigating_to_label2.setText(location)
