@@ -62,31 +62,71 @@ if __name__ == '__main__':
         #Initialize position and quaternion vectors 
         position = {'x': -0.1111, 'y' : -0.0244}
         quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.7038, 'r4' : 0.7103}
-        if len(sys.argv)>1:
-            gate_number = sys.argv[1]
-        else:
-            gate_number = 0 
 
-        if gate_number == "0":
+        destination = "Gate 0"
+        if len(sys.argv)==2:
+            destination = sys.argv[1]
+        elif len(sys.argv)>2:
+            destination = "{} {}".format(sys.argv[1],sys.argv[2])
+        else:
+            destination = "Gate 0"
+
+        print("Destination given to script: ",destination)
+        if destination == "Gate 0":
             # Customize the following values so they are appropriate for your location
             position = {'x': -0.1111, 'y' : -0.0244}
             quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.7038, 'r4' : 0.7103}
             print("go to gate 0")
-        elif gate_number == "1":
+        elif destination == "Gate 1":
             # Customize the following values so they are appropriate for your location
             position = {'x': 2.2008, 'y' : 2.3629}
             quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.7050, 'r4' : 0.7091}
             print("go to gate 1")
-        elif gate_number == "2":
+        elif destination == "Gate 2":
             # Customize the following values so they are appropriate for your location
             position = {'x': 3.3750, 'y' : 1.4000}
             quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.0076, 'r4' : 0.9999}
             print("go to gate 2")
-        elif gate_number == "3":
+        elif destination == "Gate 3":
             # Customize the following values so they are appropriate for your location
             position = {'x': 3.1872, 'y' : -0.1071}
             quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : -0.0014, 'r4' : 0.9999}
             print("go to gate 3")
+        elif destination == "Next":
+            # Customize the following values so they are appropriate for your location
+            position = {'x': 0.490000, 'y' :1.629999}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.937488, 'r4' : 0.348016}
+            print("go to caffee next")
+        elif destination == "Hugo Boss":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':1.2200001, 'y' : 2.489999}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.7071067, 'r4' : 0.70710}
+            print("go to hugo boss")
+        elif destination == "Superdrug":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':  2.530000, 'y' : 2.49999}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.695228, 'r4' : 0.71878}
+            print("go to superdrug")
+        elif destination == "Toilets":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':  0.87999, 'y' : 1.11999}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : -0.707106, 'r4' : 0.7071067}
+            print("go to toilets")
+        elif destination == "Bar Burrito":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':  2.637212, 'y' : 1.188111}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.951828, 'r4' : 0.306629}
+            print("go to barburrito")
+        elif destination == "Burger King":
+            # Customize the following values so they are appropriate for your location
+            position = {'x': 1.7798051, 'y' : 1.3155964}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' :0.25879017, 'r4' : 0.96593356}
+            print("go to burger king")
+        elif destination == "Caffe Nero":
+            # Customize the following values so they are appropriate for your location
+            position = {'x':  2.23519587, 'y' : 1.991406}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : -0.7233548, 'r4' :0.6904765}
+            print("go to caffee nero")
 
         rospy.loginfo("Go to (%s, %s) pose", position['x'], position['y'])
         success = navigator.goto(position, quaternion)
