@@ -50,8 +50,8 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);
-background-color: rgb(243, 243, 243);
+   <string notr="true">background-color: rgb(243, 243, 243);
+
 font: 30-pt &quot;montserrat&quot;;
 color: rgb(85, 87, 83);</string>
   </property>
@@ -62,7 +62,7 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>10</number>
+   <number>1</number>
   </property>
   <property name="toolTipDuration" stdset="0">
    <number>3</number>
@@ -83,10 +83,10 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>280</y>
-      <width>741</width>
-      <height>141</height>
+      <x>10</x>
+      <y>300</y>
+      <width>721</width>
+      <height>111</height>
      </rect>
     </property>
     <property name="acceptDrops">
@@ -97,10 +97,12 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 20 50pt &quot;montserrat&quot;;
-alternate-background-color: rgb(0, 255, 0);
-selection-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);
-background-color: rgb(98, 150, 187);</string>
+border-color: rgb(160, 160, 160);
+background-color: rgb(244, 244, 244);
+color: rgb(100, 140, 180);
+border-style: solid;
+border-width: 2px;
+border-radius: 10px;</string>
     </property>
     <property name="text">
      <string>Touch to Start</string>
@@ -499,10 +501,10 @@ color: rgb(85, 87, 83);</string>
    <widget class="QWidget" name="verticalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>150</y>
-      <width>261</width>
-      <height>251</height>
+      <x>146</x>
+      <y>130</y>
+      <width>181</width>
+      <height>271</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -515,21 +517,25 @@ color: rgb(85, 87, 83);</string>
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">font:20 30pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
+        <string notr="true">font: 20 30pt &quot;montserrat&quot;;
+border-color: rgb(160, 160, 160);
+background-color: rgb(243, 243, 243);
+color: rgb(100, 140, 180);
+border-style: solid;
+border-width: 2px;
+border-radius: 10px;</string>
        </property>
        <property name="text">
-        <string>Gate</string>
+        <string/>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>icons/UI Icons/plane_white.png</normaloff>icons/UI Icons/plane_white.png</iconset>
+         <normaloff>icons/UI Icons/plane_blue.png</normaloff>icons/UI Icons/plane_blue.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>60</width>
-         <height>60</height>
+         <width>100</width>
+         <height>120</height>
         </size>
        </property>
        <property name="checkable">
@@ -553,20 +559,24 @@ color: rgb(255, 255, 255);</string>
        </property>
        <property name="styleSheet">
         <string notr="true">font:20 30pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
+border-color: rgb(160, 160, 160);
+background-color: rgb(243, 243, 243);
+color: rgb(100, 140, 180);
+border-style: solid;
+border-width: 2px;
+border-radius: 10px;</string>
        </property>
        <property name="text">
-        <string>Food</string>
+        <string/>
        </property>
        <property name="icon">
         <iconset>
-         <normaloff>icons/UI Icons/food_white.png</normaloff>icons/UI Icons/food_white.png</iconset>
+         <normaloff>icons/UI Icons/food_grey.png</normaloff>icons/UI Icons/food_grey.png</iconset>
        </property>
        <property name="iconSize">
         <size>
-         <width>60</width>
-         <height>60</height>
+         <width>100</width>
+         <height>120</height>
         </size>
        </property>
        <property name="flat">
@@ -580,9 +590,9 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>150</y>
-      <width>271</width>
-      <height>251</height>
+      <y>130</y>
+      <width>211</width>
+      <height>271</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">

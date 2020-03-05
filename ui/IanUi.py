@@ -25,8 +25,28 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.setCurrentWidget(self.START)
 
 
+
+    def popUp(self, string):
+        widget = self.currentWidget()
+        popUp = QtWidgets.QWidget(parent = widget)
+        popUp.setGeometry(120, 60,500, 300)
+        popUp.setStyleSheet("background-color: rgb(204, 0, 0);")
+        label = QtWidgets.QLabel(parent = popUp)
+        label.setGeometry(10, 10, 480, 280)
+        label.setText(string)
+        label.setWordWrap(True)
+        label.setStyleSheet("background-color: rgb(255, 255, 255);font: 20 30pt montserrat; color: rgb(204, 0, 0);")
+        popButton = QtWidgets.QPushButton(parent = popUp)
+        popButton.setGeometry(435, 10, 50, 50)
+        popButton.setText("x")
+        popButton.setStyleSheet("font: 20 30pt montserrat;")
+
+        popButton.setFlat(True)
+        popButton.clicked.connect(lambda: popUp.close())
+        popUp.show()
+
 def main():
-    os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/publish_initial_pos.py")
+    #os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/publish_initial_pos.py")
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle('plastique')
     model = IanUiModel()
