@@ -1,14 +1,14 @@
 import mysql.connector
 
 #initiate the connection to the DB
-def gate_no(flight_id):
-    conn = mysql.connector.connect(user='group6', password='turtlebot',
+def gate_no(name):
+    conn = mysql.connector.connect(user='root', password='ubuntu',
                               host='localhost',
                               database='main_sdp_db')
 
     cursor = conn.cursor()
 # query string to be used for DB 
-    query = "SELECT gate_no FROM flights WHERE flight_id = '{}'".format(flight_id) 
+    query = "SELECT flight_id FROM passengers WHERE name = '{}'".format(name) 
     
     output = []
     cursor.execute(query)

@@ -43,6 +43,9 @@
   <property name="windowOpacity">
    <double>1.000000000000000</double>
   </property>
+  <property name="toolTipDuration">
+   <number>3</number>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
@@ -68,11 +71,11 @@ color: rgb(85, 87, 83);</string>
    <property name="windowOpacity">
     <double>1.000000000000000</double>
    </property>
+   <property name="toolTipDuration">
+    <number>3</number>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
-   </property>
-   <property name="toolTipDuration" stdset="0">
-    <number>3</number>
    </property>
    <widget class="QPushButton" name="start">
     <property name="enabled">
