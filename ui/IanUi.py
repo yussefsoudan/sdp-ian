@@ -46,7 +46,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         popUp.show()
 
 def main():
-    os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/publish_initial_pos.py")
+    #os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/publish_initial_pos.py")
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle('plastique')
     model = IanUiModel()

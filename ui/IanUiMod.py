@@ -13,11 +13,11 @@ class Customer:
         self.flight = flight
         self.gate = gate
         self.depart_time = depart_time
-    
+
     def isNullPassenger(self):
         return (self.name == None or self.flight == None
         or self.gate == None or self.depart_time == None)
-    
+
     # clears customer data
     def clearCustomer(self):
         self.name = None
@@ -35,7 +35,7 @@ class IanUiModel:
 
     def __init__(self):
         pass
-    
+
     # the scanning functionality
     def scan(self, view):
         view.setCurrentWidget(view.SCAN)
@@ -52,13 +52,13 @@ class IanUiModel:
         board_time = file_lines[4].strip()
         self.cust.depart_time = file_lines[5].strip()
         dest = file_lines[6].strip()
-        
+
         # if scanning failed
         if self.cust.isNullPassenger():
             # maybe add scanning failed pop up?
             view.setCurrentWidget(view.START)
             return
-        
+
         view.setCurrentWidget(view.SUCCESS)
 
         # for reuse
@@ -76,11 +76,11 @@ class IanUiModel:
 	    # NAVIGATION
         view.passenger_info_1.setText("{}\n{}\n{}\n{}".format(
             name_string, flight_string, gate_string, depart_time_string))
-        
+
         # PAUSE
         view.passenger_info_2.setText("{}\n{}\n{}\n{}".format(
             name_string, flight_string, gate_string, depart_time_string))
-        
+
         # for testing
         # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
 
@@ -90,7 +90,7 @@ class IanUiModel:
         # if view.currentWidget() == view.SUCCESS: view.setCurrentWidget(view.INFO)
 
         view.setCurrentWidget(view.INFO)
-    
+
     def help(self, view, previous_widget):
         view.setCurrentWidget(view.HELP)
         view.help_back.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
@@ -108,9 +108,9 @@ class IanUiModel:
         print("Location given choose Dest:",location)
         global global_loc
         global_loc = location
-        
+
         view.back_to_prev.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
-    
+
     # the navigation functionality
     def navigate(self, view):
         QtTest.QTest.qWait(10)
@@ -125,7 +125,7 @@ class IanUiModel:
 
         # QtTest.QTest.qWait(6000)
         # self.setCurrentWidget(self.COMPLETE)
-    
+
     # the pausing functionality
     # move to ctrl?
     def pause(self, view):
@@ -133,11 +133,6 @@ class IanUiModel:
         view.setCurrentWidget(view.PAUSE)
         QtTest.QTest.qWait(10)
         os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/cancel_goal.py")
-	
-        #view.pause_new_goal.clicked.connect(lambda: view.setCurrentWidget(view.WHERE))
-        #view.resume_navigation.clicked.connect(lambda: self.navigate(view)
 
     def goHub(self, view):
         pass
-
-    
