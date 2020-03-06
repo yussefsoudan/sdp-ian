@@ -6,7 +6,7 @@ class IanUiController:
         self.view = view
         # Connect signals and slots
         self.connectButtons()
-    
+
     def connectButtons(self):
 
         # START
@@ -29,9 +29,7 @@ class IanUiController:
         self.view.kk_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Krispy Kreme", self.view.FOOD))
         self.view.yo_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Yo-Sushi", self.view.FOOD))
         self.view.caffenero_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Caffe Nero", self.view.FOOD))
-        self.view.eat_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Eat.", self.view.FOOD))
         self.view.pret_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Pret A Manger", self.view.FOOD))
-        self.view.brewdog_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Brewdog", self.view.FOOD))
         self.view.back_to_where_food.clicked.connect(lambda: self.view.setCurrentWidget(self.view.WHERE))
 
         # SHOPS
@@ -40,8 +38,6 @@ class IanUiController:
         self.view.dutyfree_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "World Duty Free", self.view.SHOPS))
         self.view.superdrug_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Superdrug", self.view.SHOPS))
         self.view.mns_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "M&S", self.view.SHOPS))
-        self.view.fatface_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Fatface", self.view.SHOPS))
-        self.view.accessorize_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Accessorize", self.view.SHOPS))
         self.view.hugoboss_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Hugo Boss", self.view.SHOPS))
         self.view.back_to_where_shops.clicked.connect(lambda: self.view.setCurrentWidget(self.view.WHERE))
 

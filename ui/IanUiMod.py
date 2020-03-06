@@ -111,9 +111,15 @@ class IanUiModel:
 
         view.back_to_prev.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
 
+    def showLocation(self, view, x, y):
+        view.map_location.setGeometry(x,y,21,21)
+        view.map_location.setGeometry(x,y,21,21)
+
+
     # the navigation functionality
     def navigate(self, view):
         QtTest.QTest.qWait(10)
+        self.showLocation(view, 400,200)
 
         view.setCurrentWidget(view.NAVIGATING)
 
