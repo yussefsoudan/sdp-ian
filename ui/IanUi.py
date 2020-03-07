@@ -179,7 +179,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         self.setCurrentWidget(self.NAVIGATING)
 
         QtTest.QTest.qWait(1000)
-        
+
         # os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
         os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(self.cust.gate))
         self.pause_navigation.clicked.connect(lambda: self.pause(location))
