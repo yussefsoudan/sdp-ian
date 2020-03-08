@@ -6,7 +6,7 @@ class IanUiController:
         self.view = view
         # Connect signals and slots
         self.connectButtons()
-    
+
     def connectButtons(self):
 
         # START
@@ -26,22 +26,18 @@ class IanUiController:
         # FOOD
         self.view.bburr_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Bar Burrito", self.view.FOOD))
         self.view.bking_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Burger King", self.view.FOOD))
-        # self.view.kk_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Krispy Kreme", self.view.FOOD))
-        # self.view.yo_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Yo-Sushi", self.view.FOOD))
+        self.view.kk_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Krispy Kreme", self.view.FOOD))
+        self.view.yo_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Yo-Sushi", self.view.FOOD))
         self.view.caffenero_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Caffe Nero", self.view.FOOD))
-        # self.view.eat_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Eat.", self.view.FOOD))
-        # self.view.pret_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Pret A Manger", self.view.FOOD))
-        # self.view.brewdog_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Brewdog", self.view.FOOD))
+        self.view.pret_food.clicked.connect(lambda: self.model.chooseDestination(self.view, "Pret A Manger", self.view.FOOD))
         self.view.back_to_where_food.clicked.connect(lambda: self.view.setCurrentWidget(self.view.WHERE))
 
         # SHOPS
-        # self.view.whs_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "WHSmith", self.view.SHOPS))
+        self.view.whs_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "WHSmith", self.view.SHOPS))
         self.view.next_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Next", self.view.SHOPS))
-        # self.view.dutyfree_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "World Duty Free", self.view.SHOPS))
+        self.view.dutyfree_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "World Duty Free", self.view.SHOPS))
         self.view.superdrug_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Superdrug", self.view.SHOPS))
-        # self.view.mns_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "M&S", self.view.SHOPS))
-        # self.view.fatface_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Fatface", self.view.SHOPS))
-        # self.view.accessorize_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Accessorize", self.view.SHOPS))
+        self.view.mns_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "M&S", self.view.SHOPS))
         self.view.hugoboss_shop.clicked.connect(lambda: self.model.chooseDestination(self.view, "Hugo Boss", self.view.SHOPS))
         self.view.back_to_where_shops.clicked.connect(lambda: self.view.setCurrentWidget(self.view.WHERE))
 
@@ -53,6 +49,7 @@ class IanUiController:
         self.view.no_more_help.clicked.connect(lambda: self.model.exit(self.view, self.view.COMPLETE))
 
         # Help buttons
+        self.view.info_1.clicked.connect(lambda: self.model.help(self.view, self.view.SCAN))
         self.view.info_2.clicked.connect(lambda: self.model.help(self.view, self.view.INFO))
         self.view.info_3.clicked.connect(lambda: self.model.help(self.view, self.view.WHERE))
         self.view.info_4.clicked.connect(lambda: self.model.help(self.view, self.view.FOOD))
@@ -63,6 +60,7 @@ class IanUiController:
         self.view.info_9.clicked.connect(lambda: self.model.help(self.view, self.view.COMPLETE))
 
         # Exit buttons
+        self.view.exit_1.clicked.connect(lambda: self.model.exit(self.view, self.view.SCAN))
         self.view.exit_2.clicked.connect(lambda: self.model.exit(self.view, self.view.INFO))
         self.view.exit_3.clicked.connect(lambda: self.model.exit(self.view, self.view.WHERE))
         self.view.exit_4.clicked.connect(lambda: self.model.exit(self.view, self.view.FOOD))

@@ -3,6 +3,7 @@
 # Should hold the destination? current widget?
 
 import os
+from get_pos import get_coordinates
 
 from PyQt5 import QtTest
 
@@ -13,11 +14,11 @@ class Customer:
         self.flight = flight
         self.gate = gate
         self.depart_time = depart_time
-    
+
     def isNullPassenger(self):
         return (self.name == None or self.flight == None
         or self.gate == None or self.depart_time == None)
-    
+
     # clears customer data
     def clearCustomer(self):
         self.name = None
@@ -35,12 +36,9 @@ class IanUiModel:
 
     def __init__(self):
         pass
-    
+
     # the scanning functionality
     def scan(self, view):
-        view.info_1.clicked.connect(lambda: self.help(view, view.SCAN))
-        view.exit_1.clicked.connect(lambda: self.exit(view, view.SCAN))
-
         view.setCurrentWidget(view.SCAN)
 
         QtTest.QTest.qWait(2000)
@@ -55,13 +53,13 @@ class IanUiModel:
         board_time = file_lines[4].strip()
         self.cust.depart_time = file_lines[5].strip()
         dest = file_lines[6].strip()
-        
+
         # if scanning failed
         if self.cust.isNullPassenger():
             # maybe add scanning failed pop up?
             view.setCurrentWidget(view.START)
             return
-        
+
         view.setCurrentWidget(view.SUCCESS)
 
         # for reuse
@@ -79,11 +77,11 @@ class IanUiModel:
 	    # NAVIGATION
         view.passenger_info_1.setText("{}\n{}\n{}\n{}".format(
             name_string, flight_string, gate_string, depart_time_string))
-        
+
         # PAUSE
         view.passenger_info_2.setText("{}\n{}\n{}\n{}".format(
             name_string, flight_string, gate_string, depart_time_string))
-        
+
         # for testing
         # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
 
@@ -93,7 +91,7 @@ class IanUiModel:
         # if view.currentWidget() == view.SUCCESS: view.setCurrentWidget(view.INFO)
 
         view.setCurrentWidget(view.INFO)
-    
+
     def help(self, view, previous_widget):
         view.setCurrentWidget(view.HELP)
         view.help_back.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
@@ -111,24 +109,46 @@ class IanUiModel:
         print("Location given choose Dest:",location)
         global global_loc
         global_loc = location
-        
+
         view.back_to_prev.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
-    
+
+    def showLocation(self, view, x, y):
+        view.map_location.setGeometry(x,y,21,21)
+        view.map_location_2.setGeometry(x,y,21,21)
+
+
     # the navigation functionality
     def navigate(self, view):
         QtTest.QTest.qWait(10)
 
+        
+
         view.setCurrentWidget(view.NAVIGATING)
+        # while True:
+        # position = getPosition()
+  
+            # break
+        # self.showLocation(view, 400,200)
 
         QtTest.QTest.qWait(10)
         # print("Location given Navigate:",location)
         # os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
         os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
         #view.pause_navigation.clicked.connect(lambda: self.pause(view))
+        while True:
+            
+            x_point,y_point = get_coordinates()
+            x = x_point/4.0 
+            y = y_point/3.0
+
+            x_map = ((1-x) * 345) + 350
+            y_map = (y * 255) + 100
+            print(x_map,y_map)
+            self.showLocation(view, x_map,y_map)
 
         # QtTest.QTest.qWait(6000)
         # self.setCurrentWidget(self.COMPLETE)
-    
+
     # the pausing functionality
     # move to ctrl?
     def pause(self, view):
@@ -136,11 +156,6 @@ class IanUiModel:
         view.setCurrentWidget(view.PAUSE)
         QtTest.QTest.qWait(10)
         os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/cancel_goal.py")
-	
-        #view.pause_new_goal.clicked.connect(lambda: view.setCurrentWidget(view.WHERE))
-        #view.resume_navigation.clicked.connect(lambda: self.navigate(view)
 
     def goHub(self, view):
         pass
-
-    

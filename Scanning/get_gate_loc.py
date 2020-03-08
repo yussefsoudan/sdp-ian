@@ -2,9 +2,9 @@ import mysql.connector
 
 #initiate the connection to the DB
 def gate_infor(flight_id):
-    conn = mysql.connector.connect(user='root', password='ubuntu',
-                              host='localhost',
-                              database='main_sdp_db')
+    conn = mysql.connector.connect(user='secondPi', password='turtlebot',
+                              host='192.168.105.28',
+                              database='main_sdp_db',port =3306)
 
     cursor = conn.cursor()
 # query string to be used for DB 
@@ -46,7 +46,7 @@ def gate_infor(flight_id):
 
     cursor.close()
     conn.close()
- 
+    #print(output)
     return output
 
 #if __name__ == '__main__':
