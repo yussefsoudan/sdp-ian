@@ -38,6 +38,9 @@ class IanUiModel:
     
     # the scanning functionality
     def scan(self, view):
+        view.info_1.clicked.connect(lambda: self.help(view, view.SCAN))
+        view.exit_1.clicked.connect(lambda: self.exit(view, view.SCAN))
+
         view.setCurrentWidget(view.SCAN)
 
         QtTest.QTest.qWait(2000)
@@ -84,7 +87,7 @@ class IanUiModel:
         # for testing
         # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
 
-        QtTest.QTest.qWait(2000)
+        QtTest.QTest.qWait(4000)
 
         # for testing
         # if view.currentWidget() == view.SUCCESS: view.setCurrentWidget(view.INFO)
