@@ -41,7 +41,7 @@ class IanUiModel:
     def scan(self, view):
         view.setCurrentWidget(view.SCAN)
 
-        QtTest.QTest.qWait(10)
+        QtTest.QTest.qWait(2000)
 
         os.system("python ~/Desktop/Demo2/sdp-ian/Scanning/realtime.py")
         info_file = open("info_file.txt","r")
@@ -85,7 +85,7 @@ class IanUiModel:
         # for testing
         # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
 
-        QtTest.QTest.qWait(2000)
+        QtTest.QTest.qWait(4000)
 
         # for testing
         # if view.currentWidget() == view.SUCCESS: view.setCurrentWidget(view.INFO)
