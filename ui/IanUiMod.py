@@ -94,6 +94,7 @@ class IanUiModel:
 
     def help(self, view, previous_widget):
         view.setCurrentWidget(view.HELP)
+        #view.popUp("help")
         view.help_back.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
 
     def exit(self, view, previous_widget):
