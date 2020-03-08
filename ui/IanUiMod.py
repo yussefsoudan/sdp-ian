@@ -135,7 +135,8 @@ class IanUiModel:
         # os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
         os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
         #view.pause_navigation.clicked.connect(lambda: self.pause(view))
-        while True:
+        i = 0
+        while i<5:
             
             x_point,y_point = get_coordinates()
             x = x_point/4.0 
@@ -145,6 +146,7 @@ class IanUiModel:
             y_map = (y * 255) + 100
             print(x_map,y_map)
             self.showLocation(view, x_map,y_map)
+            i+=1
 
         # QtTest.QTest.qWait(6000)
         # self.setCurrentWidget(self.COMPLETE)

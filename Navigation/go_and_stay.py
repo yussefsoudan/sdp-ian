@@ -114,6 +114,8 @@ if __name__ == '__main__':
             quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.695228, 'r4' : 0.71878}
             print("go to superdrug")
 
+        elif destination == "Toilets":
+
 
             # Customize the following values so they are appropriate for your location
             position = {'x':  0.87999, 'y' : 1.11999}

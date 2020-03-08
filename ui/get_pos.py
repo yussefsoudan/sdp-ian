@@ -42,8 +42,9 @@ import sys
 def get_coordinates():
     position_msg = rospy.wait_for_message('/move_base/feedback', MoveBaseActionFeedback)
     coordinates = position_msg.feedback.base_position.pose
-    print(coordinates)
-    return coordinates
+    print("Coordinates given",coordinates.position.x, coordinates.position.y)
+    return(coordinates.position.x, coordinates.position.y)
+
 
 # if __name__ == '__main__':
 #     try:
