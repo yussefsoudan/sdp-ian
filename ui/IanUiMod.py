@@ -3,7 +3,7 @@
 # Should hold the destination? current widget?
 
 import os
-#from get_pos import get_coordinates
+from get_pos import get_coordinates
 
 from PyQt5 import QtTest
 
@@ -135,16 +135,16 @@ class IanUiModel:
         # os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
         os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
 
-        # while True:
-        #
-        #     x_point,y_point = get_coordinates()
-        #     x = x_point/4.0
-        #     y = y_point/3.0
-        #
-        #     x_map = ((1-x) * 345) + 350
-        #     y_map = (y * 255) + 100
-        #     print(x_map,y_map)
-        #     self.showLocation(view, x_map,y_map)
+        while True:
+
+            x_point,y_point = get_coordinates()
+            x = x_point/4.0
+            y = y_point/3.0
+
+            x_map = ((1-x) * 345) + 350
+            y_map = (y * 255) + 100
+            print(x_map,y_map)
+            self.showLocation(view, x_map,y_map)
 
         # QtTest.QTest.qWait(6000)
         # self.setCurrentWidget(self.COMPLETE)
