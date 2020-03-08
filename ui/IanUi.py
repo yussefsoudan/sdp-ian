@@ -11,7 +11,7 @@ from IanUiMod import IanUiModel
 __version__ = 0.1
 __author__ = 'Daragh Meehan & Eloise Milliken'
 
-qtdesigner_file  = "test.ui"
+qtdesigner_file  = "test2.ui"
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtdesigner_file)
 
 

@@ -116,6 +116,10 @@ class IanUiModel:
         view.map_location.setGeometry(x,y,21,21)
         view.map_location_2.setGeometry(x,y,21,21)
 
+    def showDestination(self, view, x, y):
+        view.map_goal.setGeometry(x,y,21,21)
+        view.map_goal_2.setGeometry(x,y,21,21)
+
 
     # the navigation functionality
     def navigate(self, view):
