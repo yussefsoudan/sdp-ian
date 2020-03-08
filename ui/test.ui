@@ -59,7 +59,7 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>9</number>
+   <number>10</number>
   </property>
   <property name="toolTipDuration" stdset="0">
    <number>3</number>
@@ -1598,7 +1598,7 @@ color: rgb(85, 87, 83);</string>
      <rect>
       <x>0</x>
       <y>100</y>
-      <width>731</width>
+      <width>741</width>
       <height>91</height>
      </rect>
     </property>
@@ -1804,7 +1804,7 @@ border-radius: 35px;</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Going to...</string>
+     <string>Going to</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pause_navigation">
@@ -1839,9 +1839,9 @@ color: rgb(255, 255, 255);</string>
    <widget class="QLabel" name="navigating_to_label2">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>190</x>
       <y>15</y>
-      <width>361</width>
+      <width>391</width>
       <height>51</height>
      </rect>
     </property>
@@ -2034,15 +2034,15 @@ border-radius: 35px;</string>
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Going to...</string>
+     <string>Going to</string>
     </property>
    </widget>
    <widget class="QLabel" name="navigating_to_label3">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>190</x>
       <y>15</y>
-      <width>451</width>
+      <width>481</width>
       <height>51</height>
      </rect>
     </property>
