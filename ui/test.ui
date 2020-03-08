@@ -43,6 +43,9 @@
   <property name="windowOpacity">
    <double>1.000000000000000</double>
   </property>
+  <property name="toolTipDuration">
+   <number>3</number>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
@@ -59,20 +62,17 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>9</number>
-  </property>
-  <property name="toolTipDuration" stdset="0">
-   <number>3</number>
+   <number>6</number>
   </property>
   <widget class="QWidget" name="START">
    <property name="windowOpacity">
     <double>1.000000000000000</double>
    </property>
+   <property name="toolTipDuration">
+    <number>3</number>
+   </property>
    <property name="autoFillBackground">
     <bool>false</bool>
-   </property>
-   <property name="toolTipDuration" stdset="0">
-    <number>3</number>
    </property>
    <widget class="QPushButton" name="start">
     <property name="enabled">
@@ -546,7 +546,7 @@ border-radius: 35px;</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
+   <widget class="QLabel" name="your_info_label">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -569,7 +569,7 @@ color: rgb(255, 255, 255);</string>
    <zorder>back_to_start</zorder>
    <zorder>info_2</zorder>
    <zorder>exit_2</zorder>
-   <zorder>label_7</zorder>
+   <zorder>your_info_label</zorder>
   </widget>
   <widget class="QWidget" name="WHERE">
    <widget class="QLabel" name="where_to_label">
@@ -1213,7 +1213,7 @@ border-radius: 35px;</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="food_court_label">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -1240,7 +1240,7 @@ color: rgb(255, 255, 255);</string>
    <zorder>info_4</zorder>
    <zorder>back_to_where_food</zorder>
    <zorder>exit_4</zorder>
-   <zorder>label_6</zorder>
+   <zorder>food_court_label</zorder>
   </widget>
   <widget class="QWidget" name="SHOPS">
    <widget class="QPushButton" name="info_5">
@@ -1433,8 +1433,8 @@ border-radius: 45px;</string>
     </property>
     <property name="iconSize">
      <size>
-      <width>230</width>
-      <height>230</height>
+      <width>170</width>
+      <height>170</height>
      </size>
     </property>
     <property name="flat">
@@ -1559,7 +1559,7 @@ border-radius: 45px;</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="shopping_label">
     <property name="geometry">
      <rect>
       <x>210</x>
@@ -1586,7 +1586,7 @@ color: rgb(255, 255, 255);</string>
    <zorder>next_shop</zorder>
    <zorder>hugoboss_shop</zorder>
    <zorder>mns_shop</zorder>
-   <zorder>label_5</zorder>
+   <zorder>shopping_label</zorder>
   </widget>
   <widget class="QWidget" name="CONFIRM_DEST">
    <property name="styleSheet">
@@ -1645,7 +1645,7 @@ color: rgb(255, 255, 255);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="go_to_label">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -1783,7 +1783,7 @@ border-radius: 35px;</string>
    <zorder>line_6</zorder>
    <zorder>destination_label</zorder>
    <zorder>yes_go</zorder>
-   <zorder>label</zorder>
+   <zorder>go_to_label</zorder>
    <zorder>info_6</zorder>
    <zorder>back_to_prev</zorder>
    <zorder>exit_6</zorder>
@@ -2459,7 +2459,7 @@ border-radius: 50px;</string>
    <zorder>no_more_help</zorder>
   </widget>
   <widget class="QWidget" name="HELP">
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="help_label">
     <property name="geometry">
      <rect>
       <x>290</x>
@@ -2476,7 +2476,7 @@ color: rgb(255, 255, 255);</string>
      <string>Help</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="call_for_help">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -2534,22 +2534,6 @@ border-radius: 35px;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>100</y>
-      <width>541</width>
-      <height>201</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>*Frequently asked questions*</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-    </property>
-   </widget>
    <widget class="Line" name="line_10">
     <property name="geometry">
      <rect>
@@ -2569,11 +2553,115 @@ border-radius: 35px;</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>671</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;montserrat&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Who is Ian?</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>150</y>
+      <width>671</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;montserrat&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>How do I scan my boarding pass?</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>190</y>
+      <width>671</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;montserrat&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>How do I choose my destination?</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>230</y>
+      <width>671</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;montserrat&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Can I change my destination?</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>260</y>
+      <width>671</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;montserrat&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>How do I stop using Ian?</string>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
    <zorder>line_10</zorder>
-   <zorder>label_2</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>help_label</zorder>
+   <zorder>call_for_help</zorder>
    <zorder>help_back</zorder>
-   <zorder>label_3</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>pushButton_5</zorder>
   </widget>
   <widget class="QWidget" name="EXIT">
    <widget class="QLabel" name="exit_label">
@@ -2646,7 +2734,7 @@ border-radius: 45px;</string>
      <string>EXIT</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="sent_to_hub_label">
     <property name="geometry">
      <rect>
       <x>20</x>
