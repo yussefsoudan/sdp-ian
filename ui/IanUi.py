@@ -2,7 +2,7 @@
 
 import sys, os
 
-from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic
+from PyQt5 import QtCore, QtGui, QtWidgets, uic
 
 # the model and controller classes
 from IanUiCtrl import IanUiController
@@ -24,6 +24,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         self.setCurrentWidget(self.START)
 
+
     def popUp(self, string):
         widget = self.currentWidget()
         popUp = QtWidgets.QWidget(parent = widget)
@@ -39,7 +40,6 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         popButton.setGeometry(500, 5, 50, 50)
         popButton.setText("x")
         popButton.setStyleSheet("font: 30pt montserrat;")
-
         popButton.setFlat(True)
         popButton.clicked.connect(lambda: popUp.close())
         popUp.show()
