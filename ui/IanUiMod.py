@@ -54,6 +54,8 @@ class IanUiModel:
         self.cust.depart_time = file_lines[5].strip()
         dest = file_lines[6].strip()
 
+        os.system("python ~/Desktop/Demo2/sdp-ian/Live/second_pi/check_for_status_change.py {}".format(self.cust.flight))
+
         # if scanning failed
         if self.cust.isNullPassenger():
             # maybe add scanning failed pop up?
@@ -125,8 +127,6 @@ class IanUiModel:
     # the navigation functionality
     def navigate(self, view):
         QtTest.QTest.qWait(10)
-
-
 
         view.setCurrentWidget(view.NAVIGATING)
         # while True:

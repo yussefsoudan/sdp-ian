@@ -39,7 +39,6 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         popButton.setGeometry(500, 5, 50, 50)
         popButton.setText("x")
         popButton.setStyleSheet("font: 30pt montserrat;")
-
         popButton.setFlat(True)
         popButton.clicked.connect(lambda: popUp.close())
         popUp.show()
