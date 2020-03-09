@@ -28,7 +28,7 @@ while True:
 	if original_status != current_status:
 		print('The flight status has changed!')
 		print('New status: ' + current_status)
-		os.system ("ssh ubuntu@192.168.105.149 nohup python ~/Desktop/Demo2/sdp-ian/Live/second_pichange.py " + current_status)
+		os.system ("ssh ubuntu@192.168.105.149 nohup python ~/Desktop/Demo2/sdp-ian/Live/second_pi/change.py " + current_status)
 		break
 	else: 
 		print('No status change...')
