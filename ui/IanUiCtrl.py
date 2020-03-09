@@ -1,11 +1,17 @@
 # Links up the UI buttons, and controls the scanning and navigation processes. It is the Controller of the program.
 
+import threading
+from PyQt5 import QtTest
+
 class IanUiController:
     def __init__(self, model, view):
         self.model = model
         self.view = view
         # Connect signals and slots
         self.connectButtons()
+
+        # need to close thread at end?
+        self.update_checker = UpdateChecker()
 
     def connectButtons(self):
 
@@ -78,3 +84,21 @@ class IanUiController:
 
         self.view.pause_new_goal.clicked.connect(lambda: self.view.setCurrentWidget(self.view.WHERE))
         self.view.resume_navigation.clicked.connect(lambda: self.model.navigate(self.view))
+
+class UpdateChecker:
+    def __init__(self):
+        self.updating_thread = threading.Thread(target=self.checkForUpdates())
+        self.updating_thread.start()
+    
+    def checkForUpdates(self):
+        while True:
+            print('Checking for an update')
+            update_file = open('update.txt', 'r')
+            updates = update_file.readlines()
+            if updates != []:
+                # functionality in here
+                pass
+            update_file = open('update.txt', 'w')
+            update_file.close()
+
+            QtTest.QTest.qWait(3000)
