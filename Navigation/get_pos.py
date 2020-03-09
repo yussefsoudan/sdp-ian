@@ -3,7 +3,7 @@ import rospy
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal, MoveBaseActionFeedback
 import actionlib
 from actionlib_msgs.msg import *
-from geometry_msgs.msg import Pose, Point, Quaternion
+from geometry_msgs.msg import Pose, Point, Quaternion,Twist
 import sys
 
 # class getPosition():
@@ -38,13 +38,31 @@ import sys
     #     if self.goal_sent:
     #         self.move_base.cancel_goal()
     #     rospy.sleep(1)
+def get_vel():
+    rospy.init_node('vel_test', anonymous=False)
+    vel_msg = rospy.wait_for_message('/cmd_vel', Twist)
+    cmd_x = vel_msg.linear.x
+    cmd_y = vel_msg.linear.y
+    ang_x = vel_msg.angular.x
+    ang_y = vel_msg.angular.y
+
+    print("Linear Velocity is x : {}, y: {}, Angular Velocicity is x : {}, y: {} ".format(cmd_x,cmd_y,ang_x,ang_y))
+    return(cmd_x,cmd_y,ang_x,ang_y)
+def get_status():
+    rospy.init_node('status_test', anonymous=False)
+    status_msg = rospy.wait_for_message('/move_base/status', GoalStatusArray)
+    status = status_msg.status_list[0].status
+    print("Status is ", status)
+    return(status)
 
 def get_coordinates():
+
     position_msg = rospy.wait_for_message('/move_base/feedback', MoveBaseActionFeedback)
     coordinates = position_msg.feedback.base_position.pose
     print("Coordinates given",coordinates.position.x, coordinates.position.y)
     return(coordinates.position.x, coordinates.position.y)
-
+# get_vel()
+# get_coordinates()
 # if __name__ == '__main__':
 #     try:
 #         rospy.init_node('nav_test', anonymous=False)
