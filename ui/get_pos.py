@@ -45,7 +45,6 @@ def get_coordinates():
     print("Coordinates given",coordinates.position.x, coordinates.position.y)
     return(coordinates.position.x, coordinates.position.y)
 
-
 # if __name__ == '__main__':
 #     try:
 #         rospy.init_node('nav_test', anonymous=False)

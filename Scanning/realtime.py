@@ -7,6 +7,8 @@ from get_gate_no import gate_no
 from get_gate_loc import gate_infor
 from read_csv import read_query_output
 from datetime import datetime
+from send_link import link
+from clean import clean_db
 import argparse
 import datetime
 import imutils
@@ -116,6 +118,9 @@ def scan():
     info_file.write(dest[0] + '\n')
     info_file.close()
 
+    clean_db() 
+    link(flight_id[0])
+    
     return({'gate_no':gate,'flight_id':flight_id,'status':status,'boarding_time':board,
     'depature_time':departure,'destination':dest})
     

@@ -11,7 +11,7 @@ from IanUiMod import IanUiModel
 __version__ = 0.1
 __author__ = 'Daragh Meehan & Eloise Milliken'
 
-qtdesigner_file  = "test.ui"
+qtdesigner_file  = "test2.ui"
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtdesigner_file)
 
 
@@ -24,22 +24,21 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         self.setCurrentWidget(self.START)
 
-
-
     def popUp(self, string):
         widget = self.currentWidget()
         popUp = QtWidgets.QWidget(parent = widget)
-        popUp.setGeometry(120, 60,500, 300)
-        popUp.setStyleSheet("background-color: rgb(204, 0, 0);")
+        popUp.setGeometry(90, 30,560, 360)
+        popUp.setStyleSheet("background-color: rgb(120, 120, 120);")
         label = QtWidgets.QLabel(parent = popUp)
-        label.setGeometry(10, 10, 480, 280)
+        label.setGeometry(10, 10, 540, 340)
         label.setText(string)
         label.setWordWrap(True)
-        label.setStyleSheet("background-color: rgb(255, 255, 255);font: 20 30pt montserrat; color: rgb(204, 0, 0);")
+        label.setStyleSheet("background-color: rgb(255, 255, 255);font: 20 26pt montserrat; color: #444444;")
+        label.setAlignment(QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         popButton = QtWidgets.QPushButton(parent = popUp)
-        popButton.setGeometry(435, 10, 50, 50)
+        popButton.setGeometry(500, 5, 50, 50)
         popButton.setText("x")
-        popButton.setStyleSheet("font: 20 30pt montserrat;")
+        popButton.setStyleSheet("font: 30pt montserrat;")
 
         popButton.setFlat(True)
         popButton.clicked.connect(lambda: popUp.close())

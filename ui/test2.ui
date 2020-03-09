@@ -47,8 +47,7 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(242, 242, 242);
-
+   <string notr="true">background-color: rgb(255, 255, 255);
 font: 30-pt &quot;montserrat&quot;;
 color: rgb(85, 87, 83);</string>
   </property>
@@ -82,7 +81,7 @@ color: rgb(85, 87, 83);</string>
      <rect>
       <x>10</x>
       <y>300</y>
-      <width>721</width>
+      <width>711</width>
       <height>111</height>
      </rect>
     </property>
@@ -93,12 +92,11 @@ color: rgb(85, 87, 83);</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 20 50pt &quot;montserrat&quot;;
-color: rgb(98, 150, 187);
-border-color: rgb(88, 140, 200);
-
+     <string notr="true">font: 30 50pt &quot;montserrat&quot;;
+color: #ffffff;
+background-color: #5380c9;
 border-style: solid;
-border-width: 3px;
+border-width: 2px;
 border-radius: 55px;</string>
     </property>
     <property name="text">
@@ -109,6 +107,9 @@ border-radius: 55px;</string>
       <width>16</width>
       <height>16</height>
      </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
     </property>
     <property name="autoDefault">
      <bool>false</bool>
@@ -123,7 +124,7 @@ border-radius: 55px;</string>
    <widget class="QLabel" name="ian_icon">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>250</x>
       <y>30</y>
       <width>245</width>
       <height>200</height>
@@ -144,10 +145,10 @@ border-radius: 55px;</string>
    <widget class="QLabel" name="please_scan_label">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>120</y>
-      <width>571</width>
-      <height>161</height>
+      <x>10</x>
+      <y>90</y>
+      <width>721</width>
+      <height>221</height>
      </rect>
     </property>
     <property name="acceptDrops">
@@ -188,12 +189,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -214,12 +221,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -280,9 +293,9 @@ color: rgb(85, 87, 83);</string>
    <widget class="QPushButton" name="go_somewhere">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>20</x>
       <y>320</y>
-      <width>731</width>
+      <width>681</width>
       <height>91</height>
      </rect>
     </property>
@@ -294,9 +307,8 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">font: 20 40pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-border-color: rgb(160, 160, 160);
-color:rgb(255,255,255);
+color: #ffffff;
+background-color: #5380c9;
 border-style: solid;
 border-width: 2px;
 border-radius: 45px;</string>
@@ -404,7 +416,10 @@ color: rgb(85, 87, 83);</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: #5380c9;
+border-style: solid;
+border-width: 5px;
+border-radius: 35px;</string>
     </property>
     <property name="text">
      <string/>
@@ -432,12 +447,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -458,12 +479,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -473,6 +500,23 @@ color: rgb(85, 87, 83);</string>
     </property>
     <property name="flat">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="your_info_label">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>10</y>
+      <width>281</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20 48pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+    </property>
+    <property name="text">
+     <string>Your Info</string>
     </property>
    </widget>
   </widget>
@@ -498,9 +542,9 @@ color: rgb(85, 87, 83);</string>
     <property name="geometry">
      <rect>
       <x>146</x>
-      <y>130</y>
+      <y>90</y>
       <width>191</width>
-      <height>271</height>
+      <height>311</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -515,7 +559,7 @@ color: rgb(85, 87, 83);</string>
        <property name="styleSheet">
         <string notr="true">font: 20 30pt &quot;montserrat&quot;;
 border-color: rgb(85, 87, 83);
-background-color: rgb(243, 243, 243);
+background-color: #ffffff;
 color: rgb(100, 140, 180);
 border-style: solid;
 border-width: 2px;
@@ -556,7 +600,7 @@ border-radius: 60px;</string>
        <property name="styleSheet">
         <string notr="true">font: 20 30pt &quot;montserrat&quot;;
 border-color: rgb(85, 87, 83);
-background-color: rgb(243, 243, 243);
+background-color:#ffffff;
 color: rgb(100, 140, 180);
 border-style: solid;
 border-width: 2px;
@@ -586,9 +630,9 @@ border-radius: 60px;</string>
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>130</y>
+      <y>90</y>
       <width>191</width>
-      <height>271</height>
+      <height>311</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -606,7 +650,7 @@ border-radius: 60px;</string>
        <property name="styleSheet">
         <string notr="true">font: 20 30pt &quot;montserrat&quot;;
 border-color: rgb(85, 87, 83);
-background-color: rgb(243, 243, 243);
+background-color: #ffffff;
 color: rgb(100, 140, 180);
 border-style: solid;
 border-width: 2px;
@@ -644,7 +688,7 @@ border-radius: 60px;</string>
        <property name="styleSheet">
         <string notr="true">font: 20 30pt &quot;montserrat&quot;;
 border-color: rgb(85, 87, 83);
-background-color: rgb(243, 243, 243);
+background-color: #ffffff;
 color: rgb(100, 140, 180);
 border-style: solid;
 border-width: 2px;
@@ -679,12 +723,18 @@ border-radius: 60px;</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -709,7 +759,10 @@ border-radius: 60px;</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: #5380c9;
+border-style: solid;
+border-width: 5px;
+border-radius: 35px;</string>
     </property>
     <property name="text">
      <string/>
@@ -737,12 +790,18 @@ border-radius: 60px;</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -766,7 +825,7 @@ border-radius: 60px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -799,7 +858,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -832,7 +891,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -865,7 +924,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -898,7 +957,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -931,7 +990,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -963,12 +1022,18 @@ border-radius: 45px;</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -993,7 +1058,10 @@ border-radius: 45px;</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: #5380c9;
+border-style: solid;
+border-width: 5px;
+border-radius: 35px;</string>
     </property>
     <property name="text">
      <string/>
@@ -1021,12 +1089,18 @@ border-radius: 45px;</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1066,12 +1140,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1096,7 +1176,10 @@ color: rgb(85, 87, 83);</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: #5380c9;
+border-style: solid;
+border-width: 5px;
+border-radius: 35px;</string>
     </property>
     <property name="text">
      <string/>
@@ -1124,12 +1207,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1151,7 +1240,7 @@ color: rgb(85, 87, 83);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -1184,7 +1273,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -1199,8 +1288,8 @@ border-radius: 45px;</string>
     </property>
     <property name="iconSize">
      <size>
-      <width>230</width>
-      <height>230</height>
+      <width>170</width>
+      <height>170</height>
      </size>
     </property>
     <property name="flat">
@@ -1217,7 +1306,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -1250,7 +1339,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -1283,7 +1372,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -1316,7 +1405,7 @@ border-radius: 45px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(243, 243, 243);
+     <string notr="true">background-color: #ffffff;
 border-color: rgb(160, 160, 160);
 border-style: solid;
 border-width: 2px;
@@ -1366,9 +1455,9 @@ color: rgb(85, 87, 83);</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>80</y>
+      <y>90</y>
       <width>731</width>
-      <height>151</height>
+      <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1388,7 +1477,7 @@ color: rgb(85, 87, 83);</string>
    <widget class="QPushButton" name="yes_go">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>300</x>
       <y>230</y>
       <width>141</width>
       <height>151</height>
@@ -1414,9 +1503,9 @@ color: rgb(85, 87, 83);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>10</y>
-      <width>231</width>
+      <x>270</x>
+      <y>20</y>
+      <width>161</width>
       <height>51</height>
      </rect>
     </property>
@@ -1425,7 +1514,7 @@ color: rgb(85, 87, 83);</string>
 color: rgb(85, 87, 83);</string>
     </property>
     <property name="text">
-     <string>Go to...</string>
+     <string>Go to</string>
     </property>
    </widget>
    <widget class="QPushButton" name="info_6">
@@ -1437,12 +1526,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1467,7 +1562,10 @@ color: rgb(85, 87, 83);</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: #5380c9;
+border-style: solid;
+border-width: 5px;
+border-radius: 35px;</string>
     </property>
     <property name="text">
      <string/>
@@ -1495,12 +1593,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1519,7 +1623,7 @@ color: rgb(85, 87, 83);</string>
      <rect>
       <x>0</x>
       <y>10</y>
-      <width>321</width>
+      <width>181</width>
       <height>61</height>
      </rect>
     </property>
@@ -1528,7 +1632,7 @@ color: rgb(85, 87, 83);</string>
 color: rgb(85, 87, 83);</string>
     </property>
     <property name="text">
-     <string>Going to...</string>
+     <string>Going to</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pause_navigation">
@@ -1564,9 +1668,9 @@ color: rgb(85, 87, 83);</string>
    <widget class="QLabel" name="navigating_to_label2">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>190</x>
       <y>15</y>
-      <width>361</width>
+      <width>391</width>
       <height>51</height>
      </rect>
     </property>
@@ -1638,12 +1742,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1664,12 +1774,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1681,6 +1797,129 @@ color: rgb(85, 87, 83);</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="map_location">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>110</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 0px;
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icons/UI Icons/green_dot.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="you_are_here_label">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>381</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 87, 83);
+font: 20pt &quot;montserrat&quot;;</string>
+    </property>
+    <property name="text">
+     <string>You Are Here</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="you_are_here_pic">
+    <property name="geometry">
+     <rect>
+      <x>368</x>
+      <y>380</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 0px;
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icons/UI Icons/green_dot.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="map_goal">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>190</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icons/UI Icons/red_square.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="goal_pic">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>380</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icons/UI Icons/red_square.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="goal_label">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>376</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 87, 83);
+font: 20pt &quot;montserrat&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Goal</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QWidget" name="PAUSE">
    <widget class="QLabel" name="navigating_to_label1_2">
@@ -1688,7 +1927,7 @@ color: rgb(85, 87, 83);</string>
      <rect>
       <x>0</x>
       <y>5</y>
-      <width>321</width>
+      <width>181</width>
       <height>71</height>
      </rect>
     </property>
@@ -1697,15 +1936,15 @@ color: rgb(85, 87, 83);</string>
 color: rgb(85, 87, 83);</string>
     </property>
     <property name="text">
-     <string>Going to...</string>
+     <string>Going to</string>
     </property>
    </widget>
    <widget class="QLabel" name="navigating_to_label3">
     <property name="geometry">
      <rect>
-      <x>220</x>
+      <x>190</x>
       <y>15</y>
-      <width>451</width>
+      <width>481</width>
       <height>51</height>
      </rect>
     </property>
@@ -1785,12 +2024,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1811,12 +2056,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1844,9 +2095,12 @@ color: rgb(85, 87, 83);</string>
      <enum>Qt::LeftToRight</enum>
     </property>
     <property name="styleSheet">
-     <string notr="true">font:20 30pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
+     <string notr="true">font: 20 30pt &quot;montserrat&quot;;
+color: #ffffff;
+background-color: #5380c9;
+border-style: solid;
+border-width: 2px;
+border-radius: 40px;</string>
     </property>
     <property name="text">
      <string>Change Goal</string>
@@ -1874,6 +2128,129 @@ color: rgb(255, 255, 255);</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="map_location_2">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>110</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 0px;
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icons/UI Icons/green_dot.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="you_are_here_pic_2">
+    <property name="geometry">
+     <rect>
+      <x>368</x>
+      <y>380</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-style: solid;
+border-width: 0px;
+border-radius: 10px;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icons/UI Icons/green_dot.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="you_are_here_label_2">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>381</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 87, 83);
+font: 20pt &quot;montserrat&quot;;</string>
+    </property>
+    <property name="text">
+     <string>You Are Here</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="map_goal_2">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>140</y>
+      <width>21</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icons/UI Icons/red_square.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="goal_pic_2">
+    <property name="geometry">
+     <rect>
+      <x>600</x>
+      <y>380</y>
+      <width>21</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>icons/UI Icons/red_square.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="goal_label_2">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>376</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(85, 87, 83);
+font: 20pt &quot;montserrat&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Goal</string>
+    </property>
+   </widget>
    <zorder>passenger_info_2</zorder>
    <zorder>map_label_2</zorder>
    <zorder>navigating_to_label1_2</zorder>
@@ -1882,6 +2259,12 @@ color: rgb(255, 255, 255);</string>
    <zorder>exit_8</zorder>
    <zorder>info_8</zorder>
    <zorder>pause_new_goal</zorder>
+   <zorder>map_location_2</zorder>
+   <zorder>you_are_here_pic_2</zorder>
+   <zorder>you_are_here_label_2</zorder>
+   <zorder>map_goal_2</zorder>
+   <zorder>goal_pic_2</zorder>
+   <zorder>goal_label_2</zorder>
   </widget>
   <widget class="QWidget" name="COMPLETE">
    <widget class="QLabel" name="destination_reached">
@@ -1916,12 +2299,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #f84545;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/cross.png</normaloff>icons/UI Icons/cross.png</iconset>
+      <normaloff>icons/UI Icons/red_cross.png</normaloff>icons/UI Icons/red_cross.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1942,12 +2331,18 @@ color: rgb(85, 87, 83);</string>
       <height>71</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: #ffc107;;
+border-style: solid;
+border-width: 4px;
+border-radius: 35px;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>icons/UI Icons/question_yellow.png</normaloff>icons/UI Icons/question_yellow.png</iconset>
+      <normaloff>icons/UI Icons/question_yellow2.png</normaloff>icons/UI Icons/question_yellow2.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -1992,9 +2387,12 @@ color: rgb(85, 87, 83);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font:20 40pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
+     <string notr="true">font: 20 40pt &quot;montserrat&quot;;
+color: #ffffff;
+background-color: #5380c9;
+border-style: solid;
+border-width: 2px;
+border-radius: 50px;</string>
     </property>
     <property name="text">
      <string>YES</string>
@@ -2003,16 +2401,19 @@ color: rgb(255, 255, 255);</string>
    <widget class="QPushButton" name="no_more_help">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>160</x>
       <y>290</y>
       <width>171</width>
       <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font:20 40pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
+     <string notr="true">font: 20 40pt &quot;montserrat&quot;;
+color: #ffffff;
+background-color: #5380c9;
+border-style: solid;
+border-width: 2px;
+border-radius: 50px;</string>
     </property>
     <property name="text">
      <string>NO</string>
@@ -2037,19 +2438,22 @@ color: rgb(85, 87, 83);</string>
      <string>Help</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="call_for_help">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>320</y>
-      <width>741</width>
+      <x>10</x>
+      <y>310</y>
+      <width>711</width>
       <height>101</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);
-font: 20 40pt &quot;montserrat&quot;;</string>
+     <string notr="true">font: 20 40pt &quot;montserrat&quot;;
+color: #ffffff;
+background-color: #5380c9;
+border-style: solid;
+border-width: 2px;
+border-radius: 50px;</string>
     </property>
     <property name="text">
      <string>Call For Help</string>
@@ -2068,7 +2472,10 @@ font: 20 40pt &quot;montserrat&quot;;</string>
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true"/>
+     <string notr="true">color: #5380c9;
+border-style: solid;
+border-width: 5px;
+border-radius: 35px;</string>
     </property>
     <property name="text">
      <string/>
@@ -2087,21 +2494,87 @@ font: 20 40pt &quot;montserrat&quot;;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QWidget" name="verticalLayoutWidget_4">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>100</y>
-      <width>541</width>
-      <height>201</height>
+      <x>110</x>
+      <y>90</y>
+      <width>511</width>
+      <height>221</height>
      </rect>
     </property>
-    <property name="text">
-     <string>*Frequently asked questions*</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QPushButton" name="q1">
+       <property name="styleSheet">
+        <string notr="true">font: 18pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+       </property>
+       <property name="text">
+        <string>Who is Ian?</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="q2">
+       <property name="styleSheet">
+        <string notr="true">font: 18pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+       </property>
+       <property name="text">
+        <string>How do I scan my boarding pass?</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="q3">
+       <property name="styleSheet">
+        <string notr="true">font: 18pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+       </property>
+       <property name="text">
+        <string>How do I choose my destination?</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="q4">
+       <property name="styleSheet">
+        <string notr="true">font: 18pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+       </property>
+       <property name="text">
+        <string>Can I change my destination?</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="q5">
+       <property name="styleSheet">
+        <string notr="true">font: 18pt &quot;montserrat&quot;;
+color: rgb(85, 87, 83);</string>
+       </property>
+       <property name="text">
+        <string>How do I stop using Ian?</string>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QWidget" name="EXIT">
@@ -2131,19 +2604,22 @@ color: rgb(85, 87, 83);</string>
    <widget class="QPushButton" name="cancel_exit">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>140</x>
       <y>220</y>
       <width>201</width>
       <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font:20 30pt &quot;montserrat&quot;;
-background-color: rgb(98, 150, 187);
-color: rgb(255, 255, 255);</string>
+     <string notr="true">font: 20 40pt &quot;montserrat&quot;;
+color: #ffffff;
+background-color: #5380c9;
+border-style: solid;
+border-width: 2px;
+border-radius: 45px;</string>
     </property>
     <property name="text">
-     <string>GO BACK</string>
+     <string>BACK</string>
     </property>
    </widget>
    <widget class="QPushButton" name="exit_button">
@@ -2156,11 +2632,12 @@ color: rgb(255, 255, 255);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font:20 30pt &quot;montserrat&quot;;
+     <string notr="true">font:20 40pt &quot;montserrat&quot;;
 background-color: rgb(161, 0, 0);
-
-
-color: rgb(255, 255, 255);</string>
+color: rgb(255, 255, 255);
+border-style: solid;
+border-width: 2px;
+border-radius: 45px;</string>
     </property>
     <property name="text">
      <string>EXIT</string>
