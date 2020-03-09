@@ -24,6 +24,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
 
         self.setCurrentWidget(self.START)
 
+
     def popUp(self, string):
         widget = self.currentWidget()
         popUp = QtWidgets.QWidget(parent = widget)
