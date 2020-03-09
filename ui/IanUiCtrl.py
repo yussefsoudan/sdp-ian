@@ -85,6 +85,16 @@ class IanUiController:
         self.view.pause_new_goal.clicked.connect(lambda: self.view.setCurrentWidget(self.view.WHERE))
         self.view.resume_navigation.clicked.connect(lambda: self.model.navigate(self.view))
 
+        #HELP PAGE
+        self.view.q1.clicked.connect(lambda: self.view.popUp("Who is IAN?\n\nIAN is your Interactive Airport Navigator.Tell him" +
+        "where you want to go and he will take you there. He will also keep you up to date on changes to your flight."))
+        self.view.q2.clicked.connect(lambda: self.view.popUp("How do I scan my boarding pass?\n\n"))
+        self.view.q3.clicked.connect(lambda: self.view.popUp("How do I choose my destination?\n\nINFO"))
+        self.view.q4.clicked.connect(lambda: self.view.popUp("Can I change my \ndestination?\n\nYES\nWhile navigating you can pause then" +
+        " select 'Change Goal'. This will allow you to choose a new destination"))
+        self.view.q5.clicked.connect(lambda: self.view.popUp("How do I stop using IAN?\n\nFind a red 'x' button and click it." +
+        " You will be asked to confirm EXIT.\n\nNOTE: IAN will be sent back to the hub!"))
+
 class UpdateChecker:
     def __init__(self):
         self.updating_thread = threading.Thread(target=self.checkForUpdates())
