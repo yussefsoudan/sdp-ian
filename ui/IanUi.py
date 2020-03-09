@@ -2,7 +2,7 @@
 
 import sys, os
 
-from PyQt5 import QtCore, QtGui, QtWidgets, QtTest, uic
+from PyQt5 import QtCore, QtGui, QtWidgets, uic
 
 # the model and controller classes
 from IanUiCtrl import IanUiController
