@@ -9,7 +9,7 @@ class IanUiController:
         self.view = view
         # Connect signals and slots
         self.connectButtons()
-        # self.checkForUpdates()
+        self.checkForUpdates()
         # need to close thread at end?
         #self.update_checker = UpdateChecker()
 
