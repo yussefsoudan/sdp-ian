@@ -59,7 +59,7 @@ color: rgb(85, 87, 83);</string>
    <enum>QFrame::Plain</enum>
   </property>
   <property name="currentIndex">
-   <number>11</number>
+   <number>9</number>
   </property>
   <property name="toolTipDuration" stdset="0">
    <number>3</number>
@@ -1867,7 +1867,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>20</x>
       <y>239</y>
-      <width>350</width>
+      <width>321</width>
       <height>161</height>
      </rect>
     </property>
@@ -2029,9 +2029,6 @@ font: 20pt &quot;montserrat&quot;;</string>
     </property>
     <property name="textFormat">
      <enum>Qt::AutoText</enum>
-    </property>
-    <property name="pixmap">
-     <pixmap>icons/UI Icons/green_dot.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -2206,7 +2203,7 @@ color: rgb(255, 255, 255);</string>
      <rect>
       <x>20</x>
       <y>239</y>
-      <width>350</width>
+      <width>321</width>
       <height>161</height>
      </rect>
     </property>
@@ -2353,129 +2350,6 @@ border-radius: 40px;</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="map_location_2">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>110</y>
-      <width>21</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-style: solid;
-border-width: 0px;
-border-radius: 10px;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>icons/UI Icons/green_dot.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="you_are_here_pic_2">
-    <property name="geometry">
-     <rect>
-      <x>368</x>
-      <y>380</y>
-      <width>21</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-style: solid;
-border-width: 0px;
-border-radius: 10px;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>icons/UI Icons/green_dot.png</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="you_are_here_label_2">
-    <property name="geometry">
-     <rect>
-      <x>390</x>
-      <y>381</y>
-      <width>191</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #ffffff;
-font: 20pt &quot;montserrat&quot;;</string>
-    </property>
-    <property name="text">
-     <string>You Are Here</string>
-    </property>
-    <property name="textFormat">
-     <enum>Qt::AutoText</enum>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-    <property name="wordWrap">
-     <bool>false</bool>
-    </property>
-   </widget>
-   <widget class="QLabel" name="map_goal_2">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>120</y>
-      <width>21</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>icons/UI Icons/red_square.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="goal_pic_2">
-    <property name="geometry">
-     <rect>
-      <x>600</x>
-      <y>380</y>
-      <width>21</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>icons/UI Icons/red_square.png</pixmap>
-    </property>
-   </widget>
-   <widget class="QLabel" name="goal_label_2">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>376</y>
-      <width>62</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: #ffffff;
-font: 20pt &quot;montserrat&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Goal</string>
-    </property>
-   </widget>
    <zorder>line_8</zorder>
    <zorder>passenger_info_2</zorder>
    <zorder>map_label_2</zorder>
@@ -2485,12 +2359,6 @@ font: 20pt &quot;montserrat&quot;;</string>
    <zorder>exit_8</zorder>
    <zorder>info_8</zorder>
    <zorder>pause_new_goal</zorder>
-   <zorder>map_location_2</zorder>
-   <zorder>you_are_here_pic_2</zorder>
-   <zorder>you_are_here_label_2</zorder>
-   <zorder>map_goal_2</zorder>
-   <zorder>goal_pic_2</zorder>
-   <zorder>goal_label_2</zorder>
   </widget>
   <widget class="QWidget" name="COMPLETE">
    <widget class="QLabel" name="destination_reached">

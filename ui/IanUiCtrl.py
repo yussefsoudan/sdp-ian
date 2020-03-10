@@ -101,6 +101,7 @@ class IanUiController:
             update_file = open('update.txt', 'r')
             updates = update_file.readlines()
             if updates != []:
+                line = updates[0]
                 self.view.popUp(updates[0])
 
             update_file = open('update.txt', 'w')
