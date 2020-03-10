@@ -3,7 +3,7 @@
 # Should hold the destination? current widget?
 
 import os
-from get_pos import get_coordinates, get_status,get_vel
+from get_pos import get_coordinates, get_status,get_vel,get_goal_pos
 
 from PyQt5 import QtTest
 
@@ -55,7 +55,7 @@ class IanUiModel:
         self.cust.depart_time = file_lines[5].strip()
         dest = file_lines[6].strip()
 
-        os.system("python ~/Desktop/Demo2/sdp-ian/Live/second_pi/check_for_status_change.py {}".format(self.cust.flight))
+        # os.system("python ~/Desktop/Demo2/sdp-ian/Live/second_pi/check_for_status_change.py {}".format(self.cust.flight))
 
 
         # if scanning failed
@@ -115,6 +115,14 @@ class IanUiModel:
         global global_loc
         global_loc = location
 
+         # Turn Goal Coordinates to Point in UI map
+        goal_x,goal_y = get_goal_pos("Gate 0") 
+        x = goal_x/4.0
+        y = goal_y/3.0
+        x_map = ((1-x) * 345) + 315 # it was 350 
+        y_map = (y * 255) + 130 # it was 100 
+        self.showGoal(view, x_map ,y_map)
+
         view.back_to_prev.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
 
     def showLocation(self, view, x, y):
@@ -128,30 +136,23 @@ class IanUiModel:
 
     # the navigation functionality
     def navigate(self, view):
+
         print("I am in navigate function")
         global isNavigating
-        isNavigating = True
+        isNavigating = False
+
         QtTest.QTest.qWait(10)
-
-
-
         view.setCurrentWidget(view.NAVIGATING)
-        # while True:
-        # position = getPosition()
-
-            # break
-        # self.showLocation(view, 400,200)
-
-        # if get_status() == 3 :
-        #         os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/cancel_goal.py")
         QtTest.QTest.qWait(10)
-        # print("Location given Navigate:",location)
-        # os.system(" python ~/Desktop/Demo2/Navigation/go_to_specific_point_on_map.py {}".format(self.cust.gate))
-        os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
 
-        QtTest.QTest.qWait(80)
+        # print("Location given Navigate:",location)
+
+        # os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
         
-        # print(view.currentWidget())
+       
+
+        QtTest.QTest.qWait(100)
+        # isNavigating = False
         while isNavigating:
 
             print("I am navigating")
@@ -178,7 +179,7 @@ class IanUiModel:
                 print(x_map,y_map)
                 # print("Linear Velocity is x : {}, y: {} ".format(cmd_x,cmd_y))
                 # print("Status is : {}".format(status))
-                self.showLocation(view, x_map ,y_map)
+                self.showLocation(view, x_map + 10 ,y_map)
             QtTest.QTest.qWait(10)
 
         # if status == 3 :
