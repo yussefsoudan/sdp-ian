@@ -107,8 +107,9 @@ class IanUiController:
                 self.view.popUp(message + '\n\n' + status + '\n\nNew departure time:' + time)
                 self.model.cust.depart_time = time
                 self.model.updateDetails(self.view)
-            update_file = open('update.txt', 'w')
-            update_file.close()
+                # After a change, re-write the file to make it empty
+                update_file = open('update.txt', 'w+')
+                update_file.close()
 
             QtTest.QTest.qWait(3000)
 
