@@ -3,7 +3,7 @@
 # Should hold the destination? current widget?
 
 import os
-from get_pos import get_coordinates, get_status,get_vel
+# from get_pos import get_coordinates, get_status,get_vel
 
 from PyQt5 import QtTest
 
@@ -160,34 +160,34 @@ class IanUiModel:
         QtTest.QTest.qWait(80)
 
         # print(view.currentWidget())
-        while isNavigating:
+        # while isNavigating:
 
-            print("I am navigating")
-            vel_x,vel_y,ang_x,ang_y = get_vel()
-            status = get_status()
+        #     print("I am navigating")
+        #     vel_x,vel_y,ang_x,ang_y = get_vel()
+        #     status = get_status()
 
-            # if status == 3 :
-            #     isNavigating = False
-            #     break
-            if (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0 and status == 3):
-                isNavigating = False
-                print("Status is : {}".format(status))
-                print("Break out of WHILE loop")
-                break
-            elif (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0):
-                continue
-            else:
-                x_point,y_point = get_coordinates()
-                x = x_point/3.95
-                y = y_point/3.0
+        #     # if status == 3 :
+        #     #     isNavigating = False
+        #     #     break
+        #     if (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0 and status == 3):
+        #         isNavigating = False
+        #         print("Status is : {}".format(status))
+        #         print("Break out of WHILE loop")
+        #         break
+        #     elif (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0):
+        #         continue
+        #     else:
+        #         x_point,y_point = get_coordinates()
+        #         x = x_point/3.95
+        #         y = y_point/3.0
 
-                x_map = ((1-x) * 345) + 350
-                y_map = (y * 255) + 100
-                print(x_map,y_map)
-                # print("Linear Velocity is x : {}, y: {} ".format(cmd_x,cmd_y))
-                # print("Status is : {}".format(status))
-                self.showLocation(view, x_map ,y_map)
-            QtTest.QTest.qWait(10)
+        #         x_map = ((1-x) * 345) + 350
+        #         y_map = (y * 255) + 100
+        #         print(x_map,y_map)
+        #         # print("Linear Velocity is x : {}, y: {} ".format(cmd_x,cmd_y))
+        #         # print("Status is : {}".format(status))
+        #         self.showLocation(view, x_map ,y_map)
+        #     QtTest.QTest.qWait(10)
 
         # if status == 3 :
         # # QtTest.QTest.qWait(6000)
