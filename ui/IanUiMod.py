@@ -44,7 +44,7 @@ class IanUiModel:
 
         QtTest.QTest.qWait(2000)
 
-        os.system("python ~/Desktop/Demo2/sdp-ian/Scanning/realtime.py")
+        os.system("python ~/sdp-ian/Scanning/realtime.py")
         info_file = open("info_file.txt","r")
         file_lines = info_file.readlines()
         self.cust.name = file_lines[0].strip()
@@ -55,7 +55,7 @@ class IanUiModel:
         self.cust.depart_time = file_lines[5].strip()
         dest = file_lines[6].strip()
 
-        # os.system("python ~/Desktop/Demo2/sdp-ian/Live/second_pi/check_for_status_change.py {}".format(self.cust.flight))
+        # os.system("python ~/sdp-ian/Live/second_pi/check_for_status_change.py {}".format(self.cust.flight))
 
 
         # if scanning failed
@@ -158,7 +158,7 @@ class IanUiModel:
 
         # print("Location given Navigate:",location)
 
-        os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
+        os.system(" python ~/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
         
        
 
@@ -195,7 +195,7 @@ class IanUiModel:
 
         # if status == 3 :
         # # QtTest.QTest.qWait(6000)
-        #     os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/cancel_goal.py")
+        #     os.system(" python ~/sdp-ian/Navigation/cancel_goal.py")
         #     self.setCurrentWidget(self.COMPLETE)
 
     # the pausing functionality
@@ -206,7 +206,7 @@ class IanUiModel:
 
         view.setCurrentWidget(view.PAUSE)
         QtTest.QTest.qWait(10)
-        os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/cancel_goal.py")
+        os.system(" python ~/sdp-ian/Navigation/cancel_goal.py")
 
     def goHub(self, view):
         # os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/cancel_goal.py")
