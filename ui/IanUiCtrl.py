@@ -101,9 +101,12 @@ class IanUiController:
             update_file = open('update.txt', 'r')
             updates = update_file.readlines()
             if updates != []:
-                line = updates[0]
-                self.view.popUp(updates[0])
-
+                message = updates[0].strip()
+                status = updates[1].strip()
+                time = updates[2].strip()
+                self.view.popUp(message + '\n\n' + status + '\n\nNew departure time:' + time)
+                self.model.cust.depart_time = time
+                self.model.updateDetails(self.view)
             update_file = open('update.txt', 'w')
             update_file.close()
 

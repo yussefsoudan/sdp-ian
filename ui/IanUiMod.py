@@ -66,7 +66,7 @@ class IanUiModel:
 
         view.setCurrentWidget(view.SUCCESS)
 
-        self.updateDetails()
+        self.updateDetails(view)
         # for testing
         # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
 
@@ -77,7 +77,7 @@ class IanUiModel:
 
         view.setCurrentWidget(view.INFO)
 
-    def updateDetails(self):
+    def updateDetails(self, view):
 
         # for reuse
         name_string = "Name: " + self.cust.name
