@@ -18,7 +18,7 @@ query = "SELECT depature_time FROM flights WHERE flight_id = '{}'".format(flight
 cursor.execute(query)
 row = cursor.fetchone()
 output3 = row
-new_depart_time = output3[0]
+new_depart_time = str(output3[0])
 
 cursor.close()
 conn.close()
@@ -31,11 +31,11 @@ while True:
 	cursor.execute(query)
 	row = cursor.fetchone()
 	output2 = row
-	current_status = output2[0]
+	current_status = str(output2[0])
 	if original_status != current_status:
 		print('The flight status has changed!')
 		print('New status: ' + current_status)
-		os.system ("ssh ubuntu@192.168.105.149 nohup python ~/Desktop/Demo2/sdp-ian/Live/second_pi/change.py " + current_status + " " + new_depart_time)
+		os.system ("ssh ubuntu@192.168.105.149 nohup python ~/sdp-ian/Live/second_pi/change.py " + 'delayed' + " " + new_depart_time)
 		break
 	else: 
 		print('No status change...')
