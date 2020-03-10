@@ -66,6 +66,19 @@ class IanUiModel:
 
         view.setCurrentWidget(view.SUCCESS)
 
+        self.updateDetails(view)
+        # for testing
+        # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
+
+        QtTest.QTest.qWait(4000)
+
+        # for testing
+        # if view.currentWidget() == view.SUCCESS: view.setCurrentWidget(view.INFO)
+
+        view.setCurrentWidget(view.INFO)
+
+    def updateDetails(self, view):
+
         # for reuse
         name_string = "Name: " + self.cust.name
         flight_string = "Flight: " + self.cust.flight
@@ -86,15 +99,6 @@ class IanUiModel:
         view.passenger_info_2.setText("{}\n{}\n{}\n{}".format(
             name_string, flight_string, gate_string, depart_time_string))
 
-        # for testing
-        # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
-
-        QtTest.QTest.qWait(4000)
-
-        # for testing
-        # if view.currentWidget() == view.SUCCESS: view.setCurrentWidget(view.INFO)
-
-        view.setCurrentWidget(view.INFO)
 
     def help(self, view, previous_widget):
         view.setCurrentWidget(view.HELP)
@@ -127,11 +131,13 @@ class IanUiModel:
 
     def showLocation(self, view, x, y):
         view.map_location.setGeometry(x,y,21,21)
-        view.map_location_2.setGeometry(x,y,21,21)
 
     def showGoal(self, view, x, y):
         view.map_goal.setGeometry(x,y,21,21)
-        view.map_goal_2.setGeometry(x,y,21,21)
+
+    def estTime(self, view, goal):
+        view.est_time.setText("Est. Journey Time:")
+        view.est_time_2.setText("Est. Journey Time:")
 
 
     # the navigation functionality
@@ -139,7 +145,12 @@ class IanUiModel:
 
         print("I am in navigate function")
         global isNavigating
-        isNavigating = False
+        isNavigating = True
+        QtTest.QTest.qWait(10)
+
+        self.estTime(view, global_loc)
+
+
 
         QtTest.QTest.qWait(10)
         view.setCurrentWidget(view.NAVIGATING)
@@ -147,7 +158,7 @@ class IanUiModel:
 
         # print("Location given Navigate:",location)
 
-        # os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
+        os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
         
        
 
