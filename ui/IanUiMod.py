@@ -55,7 +55,7 @@ class IanUiModel:
         self.cust.depart_time = file_lines[5].strip()
         dest = file_lines[6].strip()
 
-        # os.system("python ~/sdp-ian/Live/second_pi/check_for_status_change.py {}".format(self.cust.flight))
+        os.system("python ~/sdp-ian/Live/second_pi/check_for_status_change.py {}".format(self.cust.flight))
 
 
         # if scanning failed
