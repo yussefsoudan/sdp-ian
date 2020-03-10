@@ -109,6 +109,7 @@ class IanUiController:
                 self.model.updateDetails(self.view)
                 # After a change, re-write the file to make it empty
                 update_file = open('update.txt', 'w+')
+                update_file.write('')
                 update_file.close()
 
             QtTest.QTest.qWait(3000)
