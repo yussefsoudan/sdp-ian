@@ -160,26 +160,25 @@ class IanUiModel:
 
         os.system(" python ~/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
         
-       
 
         QtTest.QTest.qWait(100)
         # isNavigating = False
+
         while isNavigating:
 
             print("I am navigating")
             vel_x,vel_y,ang_x,ang_y = get_vel()
             status = get_status()
 
-            # if status == 3 :
-            #     isNavigating = False
-            #     break
             if (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0 and status == 3):
+                #wait for the status to update to make sure we are not navigating to new goal 
                 QtTest.QTest.qWait(3000)
-                vel_x,vel_y,ang_x,ang_y = get_vel()
-                if not (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0):
+                status = get_status()
+                if status != 3:
+                    print("Should continue with navigation")
                     continue
                 isNavigating = False
-                print("Status is : {}".format(status))
+                print("Status is in navigation function : {}".format(status))
                 print("Break out of WHILE loop")
                 break
             elif (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0):
@@ -192,8 +191,6 @@ class IanUiModel:
                 x_map = ((1-x) * 345) + 315
                 y_map = (y * 255) + 130
                 print(x_map,y_map)
-                # print("Linear Velocity is x : {}, y: {} ".format(cmd_x,cmd_y))
-                # print("Status is : {}".format(status))
                 self.showLocation(view, x_map  ,y_map)
             QtTest.QTest.qWait(10)
 
