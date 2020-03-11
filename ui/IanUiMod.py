@@ -120,7 +120,7 @@ class IanUiModel:
         global_loc = location
 
          # Turn Goal Coordinates to Point in UI map
-        goal_x,goal_y = get_goal_pos("Gate 0") 
+        goal_x,goal_y = get_goal_pos(global_loc) 
         x = goal_x/4.0
         y = goal_y/3.0
         x_map = ((1-x) * 345) + 315 # it was 350 
@@ -174,6 +174,10 @@ class IanUiModel:
             #     isNavigating = False
             #     break
             if (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0 and status == 3):
+                QtTest.QTest.qWait(3000)
+                vel_x,vel_y,ang_x,ang_y = get_vel()
+                if not (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0):
+                    continue
                 isNavigating = False
                 print("Status is : {}".format(status))
                 print("Break out of WHILE loop")
@@ -185,12 +189,12 @@ class IanUiModel:
                 x = x_point/3.95
                 y = y_point/3.0
 
-                x_map = ((1-x) * 345) + 350
-                y_map = (y * 255) + 100
+                x_map = ((1-x) * 345) + 315
+                y_map = (y * 255) + 130
                 print(x_map,y_map)
                 # print("Linear Velocity is x : {}, y: {} ".format(cmd_x,cmd_y))
                 # print("Status is : {}".format(status))
-                self.showLocation(view, x_map + 10 ,y_map)
+                self.showLocation(view, x_map  ,y_map)
             QtTest.QTest.qWait(10)
 
         # if status == 3 :

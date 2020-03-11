@@ -118,8 +118,8 @@ if __name__ == '__main__':
 
 
             # Customize the following values so they are appropriate for your location
-            position = {'x':  0.87999, 'y' : 1.11999}
-            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : -0.707106, 'r4' : 0.7071067}
+            position = {'x':  0.8599, 'y' : 0.9099}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : -0.68234, 'r4' : 0.731027}
             print("go to toilets")
 
         elif destination == "Bar Burrito":

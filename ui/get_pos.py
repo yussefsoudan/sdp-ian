@@ -54,7 +54,7 @@ def get_goal_pos(destination):
         position = {'x':  2.530000, 'y' : 2.49999}
     elif destination == "Toilets":
         # Customize the following values so they are appropriate for your location
-        position = {'x':  0.87999, 'y' : 1.11999}
+        position = {'x':  0.8599, 'y' : 0.9099}
     elif destination == "Bar Burrito":
         # Customize the following values so they are appropriate for your location
         position = {'x':  2.637212, 'y' : 1.188111}
