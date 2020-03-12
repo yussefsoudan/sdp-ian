@@ -18,3 +18,6 @@ cursor.execute(depature_time_query)
 cursor.commit()
 cursor.execute(status_query)
 cursor.commit()
+
+cursor.close()
+connection.close()
