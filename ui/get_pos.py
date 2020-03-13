@@ -28,7 +28,9 @@ def get_coordinates():
     position_msg = rospy.wait_for_message('/move_base/feedback', MoveBaseActionFeedback)
     coordinates = position_msg.feedback.base_position.pose
     print("Coordinates given",coordinates.position.x, coordinates.position.y)
-    return(coordinates.position.x, coordinates.position.y)
+    #convert the coordinates to the UI scale
+    x_map,y_map = convert_coordinates(coordinates.position.x, coordinates.position.y)
+    return(x_map,y_map)
 
 def get_goal_pos(destination):
     if destination == "Gate 0":
@@ -66,17 +68,14 @@ def get_goal_pos(destination):
         position = {'x':  2.23519587, 'y' : 1.991406}
 
     print("Destination Position x: {}, y:{}".format(position['x'],position['y']))
-    return (position['x'],position['y'])
-# get_vel()
-# get_coordinates()
-# if __name__ == '__main__':
-#     try:
-#         rospy.init_node('nav_test', anonymous=False)
-#         navigator = getPosition()
-#         # success = navigator.stop()
-#         c = navigator.get_coordinates()
-#         # rospy.sleep(1)
+    x_map,y_map = convert_coordinates(position['x'],position['y'])
+    return (x_map,y_map)
 
-#     except rospy.ROSInterruptException:
-#         rospy.loginfo("Ctrl-C caught. Quitting")
+def convert_coordinates(x,y):
+    x_temp = x/4.0 # divide by max of x in real arena
+    y_temp = y/3.0 # divide by max y in real arena
+    x_map = ((1-temp_x) * 345) + 315 # it was 350 , we do 1-x because we have some x that are negative
+    y_map = (temp_y * 255) + 130 # it was 100 
+    return (x_map,y_map)
+
 

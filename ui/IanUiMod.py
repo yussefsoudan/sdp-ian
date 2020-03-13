@@ -119,12 +119,14 @@ class IanUiModel:
         global global_loc
         global_loc = location
 
+
+        x_map,y_map = get_goal_pos(global_loc)
          # Turn Goal Coordinates to Point in UI map
-        goal_x,goal_y = get_goal_pos(global_loc) 
-        x = goal_x/4.0
-        y = goal_y/3.0
-        x_map = ((1-x) * 345) + 315 # it was 350 
-        y_map = (y * 255) + 130 # it was 100 
+        # goal_x,goal_y = get_goal_pos(global_loc) 
+        # x = goal_x/4.0
+        # y = goal_y/3.0
+        # x_map = ((1-x) * 345) + 315 # it was 350 
+        # y_map = (y * 255) + 130 # it was 100 
         self.showGoal(view, x_map ,y_map)
 
         view.back_to_prev.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
@@ -184,12 +186,12 @@ class IanUiModel:
             elif (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0):
                 continue
             else:
-                x_point,y_point = get_coordinates()
-                x = x_point/3.95
-                y = y_point/3.0
+                x_map,y_map = get_coordinates()
+                # x = x_point/3.95
+                # y = y_point/3.0
 
-                x_map = ((1-x) * 345) + 315
-                y_map = (y * 255) + 130
+                # x_map = ((1-x) * 345) + 315
+                # y_map = (y * 255) + 130
                 print(x_map,y_map)
                 self.showLocation(view, x_map  ,y_map)
             QtTest.QTest.qWait(10)
