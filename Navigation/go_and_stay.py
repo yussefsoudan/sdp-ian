@@ -79,8 +79,8 @@ if __name__ == '__main__':
             print("go to gate 0")
         elif destination == "Gate 1":
             # Customize the following values so they are appropriate for your location
-            position = {'x': 2.2008, 'y' : 2.3629}
-            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.7050, 'r4' : 0.7091}
+            position = {'x': 3.068340, 'y' : 2.180799}
+            quaternion = {'r1' : 0.000, 'r2' : 0.000, 'r3' : 0.4503608, 'r4' : 0.8928466}
             print("go to gate 1")
         elif destination == "Gate 2":
             # Customize the following values so they are appropriate for your location

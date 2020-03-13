@@ -212,5 +212,4 @@ class IanUiModel:
         os.system(" python ~/sdp-ian/Navigation/cancel_goal.py")
 
     def goHub(self, view):
-        # os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/cancel_goal.py")
-        pass
+        os.system("python ~/sdp-ian/Navigation/go_and_stay.py")
