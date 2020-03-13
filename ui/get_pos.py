@@ -74,8 +74,8 @@ def get_goal_pos(destination):
 def convert_coordinates(x,y):
     x_temp = x/4.0 # divide by max of x in real arena
     y_temp = y/3.0 # divide by max y in real arena
-    x_map = ((1-temp_x) * 345) + 315 # it was 350 , we do 1-x because we have some x that are negative
-    y_map = (temp_y * 255) + 130 # it was 100 
+    x_map = ((1-x_temp) * 345) + 315 # it was 350 , we do 1-x because we have some x that are negative
+    y_map = (y_temp * 255) + 130 # it was 100 
     return (x_map,y_map)
 
 
