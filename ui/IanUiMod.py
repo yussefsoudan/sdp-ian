@@ -2,7 +2,7 @@
 # Holds the passenger data
 # Should hold the destination? current widget?
 
-import os
+import os, time
 from get_pos import get_coordinates, get_status,get_vel,get_goal_pos
 
 from PyQt5 import QtTest
@@ -140,28 +140,30 @@ class IanUiModel:
     def estTime(self, view, goal):
 
         if goal == "Toilets":
-            time = "13 seconds"
+            time = 13
         elif goal == "Next":
-            time = "14 seconds"
+            time = 14
         elif goal == "Hugo Boss":
-            time = "20 seconds"
+            time = 20
         elif goal == "Burger King":
-            time = "19 seconds"
+            time = 19
         elif goal == "Caffe Nero":
-            time = "25 seconds"
+            time = 25
         elif goal == "Superdrug":
-            time = "29 seconds"
+            time = 29
         elif goal == "Bar Burrito":
-            time = "28 seconds"
+            time = 28
         elif goal == "Gate 1":
-            time = " seconds"
+            time = 0
         elif goal == "Gate 2":
-            time = " seconds"
+            time = 0
         elif goal == "Gate 3":
-            time = " seconds"
-        
-        view.est_time.setText("Est. Journey Time: " + time)
-        view.est_time_2.setText("Est. Journey Time: " + time)
+            time = 0
+
+        view.est_time.setText("Est. Journey Time: " + str(time) + " seconds")
+        view.est_time_2.setText("Est. Journey Time: " + str(time) + " seconds")
+
+        return time
 
 
     # the navigation functionality
@@ -170,15 +172,13 @@ class IanUiModel:
         print("I am in navigate function")
         global isNavigating
         isNavigating = True
-        QtTest.QTest.qWait(10)
 
-        self.estTime(view, global_loc)
-
-
+        estimatedTotalTime = self.estTime(view, global_loc)
 
         QtTest.QTest.qWait(10)
         view.setCurrentWidget(view.NAVIGATING)
         QtTest.QTest.qWait(10)
+
 
         # print("Location given Navigate:",location)
 
@@ -187,12 +187,25 @@ class IanUiModel:
 
         QtTest.QTest.qWait(100)
         # isNavigating = False
+        
+        startTime = time.time()
+        secondsElapsed = 0
 
         while isNavigating:
 
             print("I am navigating")
             vel_x,vel_y,ang_x,ang_y = get_vel()
             status = get_status()
+
+            if secondsElapsed >= estimatedTotalTime:
+                pass
+            else:
+                secondsSinceStart = int(time.time() - startTime)
+                if secondsSinceStart > secondsElapsed:
+                    secondsElapsed = secondsSinceStart
+                    secondsLeft = estimatedTotalTime - secondsElapsed
+                    view.est_time.setText("Est. Journey Time: " + str(secondsLeft) + " seconds")
+                    view.est_time_2.setText("Est. Journey Time: " + str(secondsLeft) + " seconds")
 
             if (vel_x == 0.0 and vel_y == 0.0 and ang_x == 0.0 and ang_y == 0.0 and status == 3):
                 #wait for the status to update to make sure we are not navigating to new goal 
