@@ -138,8 +138,30 @@ class IanUiModel:
         view.map_goal.setGeometry(x,y,21,21)
 
     def estTime(self, view, goal):
-        view.est_time.setText("Est. Journey Time:")
-        view.est_time_2.setText("Est. Journey Time:")
+
+        if goal == "Toilets":
+            time = "13 seconds"
+        elif goal == "Next":
+            time = "14 seconds"
+        elif goal == "Hugo Boss":
+            time = "20 seconds"
+        elif goal == "Burger King":
+            time = "19 seconds"
+        elif goal == "Caffe Nero":
+            time = "25 seconds"
+        elif goal == "Superdrug":
+            time = "29 seconds"
+        elif goal == "Bar Burrito":
+            time = "28 seconds"
+        elif goal == "Gate 1":
+            time = " seconds"
+        elif goal == "Gate 2":
+            time = " seconds"
+        elif goal == "Gate 3":
+            time = " seconds"
+        
+        view.est_time.setText("Est. Journey Time: " + time)
+        view.est_time_2.setText("Est. Journey Time: " + time)
 
 
     # the navigation functionality
