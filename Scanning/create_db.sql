@@ -54,6 +54,26 @@ INSERT INTO `flights` VALUES ('AAA0001',3,'Boarding','18:00:00','18:30:00','Mosc
 UNLOCK TABLES;
 
 --
+-- Table structure for table `flight_changes`
+--
+
+DROP TABLE IF EXISTS `flight_changes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `flights` (
+  `change_id` varchar(7) NOT NULL,
+  `flight_id` varchar(7) NOT NULL,
+  `status_before` varchar(50) DEFAULT NULL,
+  `status_after` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`change_id`),
+  KEY `flight_id` (`flight_id`),
+  CONSTRAINT `flights_ibfk_1` FOREIGN KEY (`flight_id`) REFERENCES `flights` (`flight_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+
+--
 -- Table structure for table `gates`
 --
 
