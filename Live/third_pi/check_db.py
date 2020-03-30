@@ -2,6 +2,8 @@ import time
 import sys
 import mysql.connector
 import os
+sys.path.insert(0, '~/sdp-ian/env.py')
+import env
 
 #starttime=time.time() 
 conn = mysql.connector.connect(host = 'localhost',database = 'main_sdp_db',
@@ -43,7 +45,7 @@ while True:
 		output3 = row
 		new_depart_time = str(output3[0])
 		
-		os.system ("ssh ubuntu@192.168.105.149 nohup python ~/sdp-ian/Live/second_pi/change.py " + current_status + " " + new_depart_time)
+		os.system ("ssh ubuntu@"+USER_PI_IP +"nohup python ~/sdp-ian/Live/second_pi/change.py " + current_status + " " + new_depart_time)
 		cursor.close()
 		conn.close()
 		break
