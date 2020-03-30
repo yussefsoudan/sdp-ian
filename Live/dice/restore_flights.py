@@ -1,6 +1,8 @@
 import mysql.connector
+sys.path.insert(0, '~/sdp-ian/env.py')
+import env
 
-connection = mysql.connector.connect(host='192.168.105.28', 
+connection = mysql.connector.connect(host=SERVER_PI_IP, 
 database='main_sdp_db', user='secondPi', password='turtlebot', port=3306)
 
 cursor = connection.cursor()
