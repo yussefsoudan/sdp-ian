@@ -1,9 +1,12 @@
 import mysql.connector
+import sys
+sys.path.insert(0, '~/sdp-ian/env.py')
+import env
 
 #initiate the connection to the DB
 def gate_no(name):
 	conn = mysql.connector.connect(user='secondPi', password='turtlebot',
-                              host='192.168.105.28',
+                              host=SERVER_PI_IP,
                               database='main_sdp_db',port =3306)
 	cursor = conn.cursor()
 # query string to be used for DB 
