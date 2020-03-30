@@ -35,7 +35,7 @@ CREATE TABLE `flights` (
   `gate_no` int(11) DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
   `boarding_time` time DEFAULT NULL,
-  `depature_time` time DEFAULT NULL,
+  `departure_time` time DEFAULT NULL,
   `destination` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`flight_id`),
   KEY `gate_no` (`gate_no`),
@@ -49,7 +49,7 @@ CREATE TABLE `flights` (
 
 LOCK TABLES `flights` WRITE;
 /*!40000 ALTER TABLE `flights` DISABLE KEYS */;
-INSERT INTO `flights` VALUES ('AAA0001',3,'Boarding','18:00:00','18:30:00','Moscow'),('AF1281',2,'Gate closed','16:50:00','17:20:00','PARIS(CDG)'),('BA1256',NULL,'Gate release soon','19:00:00','19:20:00','London'),('CA997',2,'Gate changed','17:40:00','18:00:00','Beijing'),('EZY6946',2,'DALAY',NULL,NULL,' TENERIFE SOUTH'),('KL0001',1,'Boarding start','17:30:00','18:00:00','Amsterdam');
+INSERT INTO `flights` VALUES ('AAA0001',3,'Boarding','18:00:00','18:30:00','Moscow'),('AF1281',2,'Gate closed','16:50:00','17:20:00','PARIS(CDG)'),('BA1256',3,'Gate release soon','19:00:00','19:20:00','London'),('CA997',2,'Gate changed','17:40:00','18:00:00','Beijing'),('EZY6946',2,'Delayed',12:00:00,12:30:00,' TENERIFE SOUTH'),('KL0001',1,'On time','17:30:00','18:00:00','Amsterdam');
 /*!40000 ALTER TABLE `flights` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,6 +76,31 @@ LOCK TABLES `gates` WRITE;
 /*!40000 ALTER TABLE `gates` DISABLE KEYS */;
 INSERT INTO `gates` VALUES (0,-0.111136000,-0.024464700),(1,2.200850000,2.362956000),(2,3.375043000,1.400088000),(3,3.187248700,-0.107197100);
 /*!40000 ALTER TABLE `gates` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `destinations`
+--
+
+DROP TABLE IF EXISTS `destinations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `destinations` (
+  `destination_id` int(11) NOT NULL,
+  `x_coord` decimal(12,9) DEFAULT NULL,
+  `y_coord` decimal(12,9) DEFAULT NULL,
+  PRIMARY KEY (`destination_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `destinations`
+--
+
+LOCK TABLES `destinations` WRITE;
+/*!40000 ALTER TABLE `destinations` DISABLE KEYS */;
+INSERT INTO `destinations` VALUES (0,-0.111136000,-0.024464700),(1,2.200850000,2.362956000),(2,3.375043000,1.400088000),(3,3.187248700,-0.107197100);
+/*!40000 ALTER TABLE `destinations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
