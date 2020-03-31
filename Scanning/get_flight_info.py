@@ -4,7 +4,7 @@ sys.path.insert(0, '~/sdp-ian/env.py')
 import env
 
 #initiate the connection to the DB
-def gate_infor(flight_id):
+def get_infor(flight_id):
     conn = mysql.connector.connect(user='secondPi', password='turtlebot',
                               host=SERVER_PI_IP,
                               database='main_sdp_db',port =3306)
@@ -49,8 +49,4 @@ def gate_infor(flight_id):
 
     cursor.close()
     conn.close()
-    #print(output)
     return output
-
-#if __name__ == '__main__':
-    #query_with_fetchone()
