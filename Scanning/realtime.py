@@ -2,7 +2,7 @@
 from imutils.video import VideoStream
 import csv 
 from pyzbar import pyzbar
-from get_gate_no import gate_no
+from get_flight_id import get_flight
 from get_flight_info import get_infor
 from read_csv import read_query_output
 from datetime import datetime
