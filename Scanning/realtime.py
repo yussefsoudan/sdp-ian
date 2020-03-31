@@ -1,10 +1,9 @@
 # import the necessary packages
 from imutils.video import VideoStream
-#import CustomVS
 import csv 
 from pyzbar import pyzbar
 from get_gate_no import gate_no
-from get_gate_loc import gate_infor
+from get_flight_info import get_infor
 from read_csv import read_query_output
 from datetime import datetime
 from send_link import link
@@ -84,20 +83,15 @@ def scan():
 		    break
 	
 
-    # close the output CSV file do a bit of cleanup
-    #print("[INFO] cleaning up...")
     csv.close()
     cv2.destroyAllWindows()
     vs.stop()
     while True: 
 	    if scanning != True:
 		    name = read_query_output()
-		    #print ("name is {}".format(name[0]))
 		    break
 	
     flight_id = gate_no(name[0])
-    #print ("Gate number is {}".format(gate[0]))
-    #print ("time is: {}".format(time.time()-start))
     infor = gate_infor(flight_id[0])
     gate = infor[0]
     status = infor[1]
