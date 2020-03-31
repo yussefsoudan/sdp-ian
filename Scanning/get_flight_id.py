@@ -4,7 +4,7 @@ sys.path.insert(0, '~/sdp-ian/env.py')
 import env
 
 #initiate the connection to the DB
-def gate_no(name):
+def get_id(name):
 	conn = mysql.connector.connect(user='secondPi', password='turtlebot',
                               host=SERVER_PI_IP,
                               database='main_sdp_db',port =3306)
