@@ -1,8 +1,0 @@
-DB CREDENTIALS
-
-
-username/db_name: gG4r5EDwsV
-password: Whvk8bwI9p
-host: remotemysql.com 
-ip: 37.59.55.185
-port: 3306
