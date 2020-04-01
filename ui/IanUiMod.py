@@ -1,12 +1,11 @@
-# Handles the data (e.g. passenger info, ) and logic of the program. It is the Model of the program.
-# Holds the passenger data
-# Should hold the destination? current widget?
+# Handles the data (e.g. passenger's flight information) and logic of the program. It is the Model of the program.
 
 import os, time
-from get_pos import get_coordinates, get_status,get_vel,get_goal_pos
+from get_pos import get_coordinates, get_status, get_vel, get_goal_pos
 
 from PyQt5 import QtTest
 
+# encapsulates the user's flight information
 class Customer:
 
     def __init__(self, name=None, flight=None, gate=None, depart_time=None):
@@ -15,6 +14,7 @@ class Customer:
         self.gate = gate
         self.depart_time = depart_time
 
+    # determines if the user's data has been set
     def isNullPassenger(self):
         return (self.name == None or self.flight == None
         or self.gate == None or self.depart_time == None)
@@ -26,11 +26,11 @@ class Customer:
         self.gate = None
         self.depart_time = None
 
-
 # for testing
 sampleCustomer = Customer("Joe Bloggs", "AA100", "2", "15:00")
 
 class IanUiModel:
+    
     global_loc = ""
     isNavigating = False
     cust = Customer()
@@ -40,11 +40,12 @@ class IanUiModel:
 
     # the scanning functionality
     def scan(self, view):
+    
         view.setCurrentWidget(view.SCAN)
-
         QtTest.QTest.qWait(2000)
 
         os.system("python ~/sdp-ian/Scanning/realtime.py")
+	
         info_file = open("info_file.txt","r")
         file_lines = info_file.readlines()
         self.cust.name = file_lines[0].strip()
@@ -57,26 +58,21 @@ class IanUiModel:
 
         os.system("python ~/sdp-ian/Live/second_pi/check_for_status_change.py {}".format(self.cust.flight))
 
-
-        # if scanning failed
+        # if scanning failed goes back to the home page
         if self.cust.isNullPassenger():
-            # maybe add scanning failed pop up?
             view.setCurrentWidget(view.START)
             return
 
+	# shows the success screen for a few seconds
         view.setCurrentWidget(view.SUCCESS)
-
+	
         self.updateDetails(view)
-        # for testing
-        # if view.currentWidget() == view.SCAN: view.setCurrentWidget(view.SUCCESS)
 
         QtTest.QTest.qWait(4000)
 
-        # for testing
-        # if view.currentWidget() == view.SUCCESS: view.setCurrentWidget(view.INFO)
-
         view.setCurrentWidget(view.INFO)
 
+    # updates the user's flight information in the UI itself
     def updateDetails(self, view):
 
         # for reuse
@@ -91,34 +87,37 @@ class IanUiModel:
         view.gate_label.setText(gate_string)
         view.depart_time_label.setText(depart_time_string)
 
-	    # NAVIGATION
+	# in NAVIGATION
         view.passenger_info_1.setText("{}\n{}\n{}\n{}".format(
             name_string, flight_string, gate_string, depart_time_string))
 
-        # PAUSE
+        # and in PAUSE
         view.passenger_info_2.setText("{}\n{}\n{}\n{}".format(
             name_string, flight_string, gate_string, depart_time_string))
 
 
+    # goes to help page, and goes back to the last page when exiting
     def help(self, view, previous_widget):
         view.setCurrentWidget(view.HELP)
-        #view.popUp("help")
         view.help_back.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
-
+	
+    # the same as help() but for the exit page
     def exit(self, view, previous_widget):
         view.setCurrentWidget(view.EXIT)
         view.cancel_exit.clicked.connect(lambda: view.setCurrentWidget(previous_widget))
         view.exit_button.clicked.connect(lambda: self.goHub(view))
-
+	
+    # sets the navigation goal
     def chooseDestination(self, view, location, previous_widget):
+		
         view.setCurrentWidget(view.CONFIRM_DEST)
+	
         view.destination_label.setText(location + "?")
         view.navigating_to_label2.setText(location)
         view.navigating_to_label3.setText(location)
-        print("Location given choose Dest:",location)
+        print("Location given choose Dest:", location) 
         global global_loc
         global_loc = location
-
 
         x_map,y_map = get_goal_pos(global_loc)
          # Turn Goal Coordinates to Point in UI map
@@ -137,6 +136,7 @@ class IanUiModel:
     def showGoal(self, view, x, y):
         view.map_goal.setGeometry(x,y,21,21)
 
+    # sets the estimated journey time for the chosen destination
     def estTime(self, view, goal):
 
         if goal == "Toilets":
@@ -165,11 +165,10 @@ class IanUiModel:
 
         return time
 
-
     # the navigation functionality
     def navigate(self, view):
 
-        print("I am in navigate function")
+        print("I am navigating")
         global isNavigating
         isNavigating = True
 
@@ -179,12 +178,10 @@ class IanUiModel:
         view.setCurrentWidget(view.NAVIGATING)
         QtTest.QTest.qWait(10)
 
-
         # print("Location given Navigate:",location)
-
+	
         os.system(" python ~/sdp-ian/Navigation/go_and_stay.py {}".format(global_loc))
         
-
         QtTest.QTest.qWait(100)
         # isNavigating = False
         
@@ -196,7 +193,8 @@ class IanUiModel:
             print("I am navigating")
             vel_x,vel_y,ang_x,ang_y = get_vel()
             status = get_status()
-
+	
+	    # updates the estimated journey time left if it changes
             if secondsElapsed >= estimatedTotalTime:
                 pass
             else:
@@ -236,8 +234,7 @@ class IanUiModel:
         #     os.system(" python ~/sdp-ian/Navigation/cancel_goal.py")
         #     self.setCurrentWidget(self.COMPLETE)
 
-    # the pausing functionality
-    # move to ctrl?
+    # pauses navigation
     def pause(self, view):
         global isNavigating
         isNavigating = False
@@ -246,5 +243,6 @@ class IanUiModel:
         QtTest.QTest.qWait(10)
         os.system(" python ~/sdp-ian/Navigation/cancel_goal.py")
 
+    # ian back to the hub
     def goHub(self, view):
         os.system("python ~/sdp-ian/Navigation/go_and_stay.py")
