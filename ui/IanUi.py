@@ -12,6 +12,7 @@ __version__ = 0.1
 __author__ = 'Daragh Meehan & Eloise Milliken'
 
 qtdesigner_file  = "IanLight.ui"
+# loading the .ui file for use in Python
 Ui_MainWindow, QtBaseClass = uic.loadUiType(qtdesigner_file)
 
 
@@ -21,10 +22,10 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         QtWidgets.QStackedWidget.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-
+        
         self.setCurrentWidget(self.START)
 
-
+    # generates a pop-up with an input message
     def popUp(self, string):
         widget = self.currentWidget()
         popUp = QtWidgets.QWidget(parent = widget)
@@ -44,6 +45,7 @@ class IanUi(QtWidgets.QStackedWidget, Ui_MainWindow):
         popButton.clicked.connect(lambda: popUp.close())
         popUp.show()
 
+# the entry point of the program. Initialises the model, view, and controller
 def main():
     #os.system(" python ~/Desktop/Demo2/sdp-ian/Navigation/publish_initial_pos.py")
     app = QtWidgets.QApplication(sys.argv)
@@ -53,7 +55,6 @@ def main():
     view.show()
     IanUiController(model=model, view=view)
     sys.exit(app.exec_())
-
 
 if __name__ == "__main__":
     main()
